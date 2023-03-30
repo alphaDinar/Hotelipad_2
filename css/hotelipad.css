@@ -82,7 +82,7 @@
   left: 0;
   position: absolute;
   filter: blur(1px);
-  background-image: url(/images/room3.jpg);
+  background-image: url(images/room3.jpg);
   background-position: center;
   background-size: cover;
 }
