@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/eb75260fb3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="hotelipad.css">
+  <title>Hotelipad</title>
+</head>
+<body>
+  <section class="page">
+    <nav class="head_nav">
+      <span id="logo">Hotelipad</span>
+      <p>
+        <a href="">
+          <i class="material-symbols-outlined">real_estate_agent</i>
+          <small>
+            <strong>List Your Property</strong>
+            <span>Start earning in 30 mins</span>
+          </small>
+        </a>
+        <a href="" >
+          <i class="material-symbols-outlined">card_membership</i>
+          <small>
+            <strong>Become A Member</strong>
+            <span>Additional 10% off on stays</span>
+          </small>
+        </a>
+        <a href="" >
+          <i class="material-symbols-outlined">paid</i>
+          <small>
+            <strong>Hotelipad For Business</strong>
+            <span>Coperate Booking solution</span>
+          </small>
+        </a>
+      </p>
+      <article>
+        <a href="">Login</a>
+        <hr>
+        <a href="">Register</a>
+      </article>
+    </nav>
+    <section class="head_box">
+      <nav class="social_nav">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+      </nav>
+      <div class="head_box_swiper swiper">
+        <div class="swiper_cover"></div>
+      </div>
+      <div class="head_box_con">
+        
+        <form>
+          <div class="input_field">
+            <span>City</span>
+            <input type="text" placeholder="Kumasi">
+          </div>
+          <div class="input_field">
+            <span>Arrival Date</span>
+            <input type="date" placeholder="From">
+          </div>
+          <div class="input_field">
+            <span>Depature Date</span>
+            <input type="date" placeholder="To">
+          </div>
+          <div class="input_field num_box">
+            <span>Number Of Guests</span>
+            <strong id="guest_num">
+              <small id="room_counter">1 Room</small>  ,
+              <small id="guest_counter">1 Guest</small> 
+            </strong>
+            
+            <style>
+              #guest_num{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                width: 200px;
+              }
+            </style>
+            <div class="room_nav_box">
+              <div>
+                <span>Room</span>
+                <span>Guests</span>
+              </div>
+              <article id="room_items">
+                <div class="room_li">
+                  <span>Room 1</span>
+                  <section>
+                    <small class="add">+</small>
+                    <strong class="room_nav_box_in">1</strong>
+                    <small class="sub">-</small>
+                  </section>
+                </div>
+              </article>
+              <div>
+                <span class="rem_room">Remove</span>
+                <span class="add_room">Add Room</span>
+              </div>
+            </div>
+          </div>
+          <script>
+            
+            const room_items = document.getElementById('room_items')
+            const rem_room = document.querySelector('.rem_room')
+            const add_room = document.querySelector('.add_room')
+
+            add_room.onclick =()=>{
+              var counter = document.querySelectorAll('.room_nav_box_in').length
+              if(counter < 6){
+                const item = document.createElement('div')
+                item.classList.add('room_li')
+                item.innerHTML = `<span>Room ${counter+1}</span><section><small class="add">+</small><strong class="room_nav_box_in">1</strong><small class="sub">-</small></section>`
+                room_items.appendChild(item)
+              }
+              calc_room()
+              updateNumBox()
+            }
+
+            rem_room.onclick =()=>{
+              let list = document.querySelectorAll('.room_li')
+              var counter = list.length
+              if(counter > 1){
+                list[counter-1].remove()
+              }
+              calc_room()
+              updateNumBox()
+            }
+
+            const room_counter = document.getElementById('room_counter')
+            const guest_counter = document.getElementById('guest_counter')
+
+            const updateNumBox =()=>{
+              let list = document.querySelectorAll('.room_li')
+              var counter = list.length
+              if(counter > 1){
+                room_counter.innerHTML = counter + '  ' + 'Rooms'
+              }
+              let room_nav_box_in = document.querySelectorAll('.room_nav_box_in')
+              var guest_count = 0
+              room_nav_box_in.forEach(room=>{
+                guest_count = guest_count + parseInt(room.innerHTML)
+              })
+              console.log(guest_count)
+            }
+
+            const calc_room =()=>{
+              const room_nav_box_in = document.querySelectorAll('.room_nav_box_in')
+              const add = document.querySelectorAll('.add')
+              const sub = document.querySelectorAll('.sub')
+              for (let i = 0; i < room_nav_box_in.length; i++) {
+                add[i].onclick =()=>{
+                  let value = parseInt(room_nav_box_in[i].innerHTML)
+                  if(value < 4){
+                    room_nav_box_in[i].innerHTML = value + 1
+
+                  }
+                  updateNumBox()
+                }
+                sub[i].onclick =()=>{
+                  let value = parseInt(room_nav_box_in[i].innerHTML)
+                  if(value > 1){
+                    room_nav_box_in[i].innerHTML = value - 1
+                  }
+                  updateNumBox()
+                }
+              }
+            }
+            calc_room()
+
+          </script>
+          <style>
+            .room_nav_box{
+              flex-direction: column;
+            }
+            .room_nav_box div{
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              padding: 10px 0;
+              color: black;
+              border-bottom: 1px solid darkgray;
+              /* border: 5px solid red; */
+            }
+            .room_nav_box div section{
+              flex-direction: row;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.2rem;
+            }
+            .room_nav_box div section small{
+              border: 1px solid darkgray;
+              font-size: 1.5rem;
+              border-radius: 5px;
+              cursor: pointer;
+              display: flex;
+              padding: 5px;
+              width: 20px;
+              height: 20px;
+              justify-content: center;
+              align-items: center;
+
+            }
+            .room_nav_box div section strong{
+              width: 15px;
+              padding: 10px;
+              height: 15px;
+              text-align: center;
+              /* background: skyblue; */
+            }
+            .room_nav_box div input[type=number]::-webkit-inner-spin-button{
+              display: none;
+            }
+          </style>
+
+
+          <script>
+            const num_box = document.querySelector('.num_box')
+            const guest_num = document.getElementById('guest_num')
+            const room_nav_box = document.querySelector('.room_nav_box')
+            num_box.onclick =()=>{
+              room_nav_box.classList.add('change')
+            }
+            window.onclick =()=>{
+              num_box.childNodes.forEach(num=>{
+                if(num.classList){
+                  num.classList.add('protect')
+                }
+                num.childNodes.forEach(n=>{
+                  if(n.classList){
+                    n.classList.add('protect')
+                }
+                  n.childNodes.forEach(ni=>{
+                    if(ni.classList){
+                      ni.classList.add('protect')
+                    }
+                    ni.childNodes.forEach(nii=>{
+                      if(nii.classList){
+                        nii.classList.add('protect')
+                    }
+                      nii.childNodes.forEach(niii=>{
+                        if(niii.classList){
+                          niii.classList.add('protect')
+                      }
+                    })
+                  })          
+                }) 
+              })
+              if(!event.target.classList.contains('protect')){
+                room_nav_box.classList.remove('change')
+              }
+            })
+          }
+
+            
+          </script>
+
+          <style>
+            .num_box{
+              position: relative;
+              /* padding: 15px; */
+              /* border-bottom: 2px solid black; */
+            }
+            .num_box .room_nav_box{
+              top: 110%;
+              position: absolute;
+              width: 100%;
+              display: none;
+              /* opacity: 1; */
+              border-radius: 5px;
+              background: white;
+              box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+              z-index: 10;
+            }
+            .num_box .room_nav_box.change{
+              transition: 0.1s ease;
+              display: flex;
+              animation: fadeUp 0.1s ease;
+            }
+            .num_box .room_nav_box.hide{
+              opacity : 0;
+              bottom : -50px;
+            }
+            @keyframes fadeUp{
+              0%{opacity: 0; top: 120%;}
+              100%{opacity: 1; top: 110%;}
+            }
+          </style>
+
+          <div class="input_field">
+            <button>
+              <small>Run A Search</small>
+              <i class="material-symbols-outlined">youtube_searched_for</i> 
+            </button>
+          </div>
+        </form>
+        <p>
+          <span><span>Over <span id="s1">15,000</span>  hotels</span></span>  <span>and homes across</span> <span id="s1">The Country</span> 
+        </p>
+      </div>
+    </section>
+    <section class="hostel_swiper_box">
+      <div class="hostel_swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+  </section>
+
+  <style>
+    .hostel_swiper_box{
+      width: 100%;
+      min-height: 25vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .hostel_swiper{
+      border: 2px solid black;
+      height: 25vh;
+      width: 100%;
+    }
+    .hostel_swiper .swiper-slide{
+      border: 1px solid dodgerblue;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    var hostel_swiper = new Swiper(".hostel_swiper", {
+      slidesPerView: 5,
+      // spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  <script>
+    config = {
+      // enableTime: true,
+      // dateFormat: "Y-m-d H:i",
+      altInput: true,
+      altFormat: "j F, Y",
+      // dateFormat: "d-m-Y",
+    }
+
+    flatpickr("input[type=date]", config);
+  </script>
+</body>
+</html>
+
+
