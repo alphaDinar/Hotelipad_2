@@ -12,7 +12,7 @@
     outline: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* font-family: 'Plus Jakarta Sans', sans-serif; */
     scroll-behavior: smooth;
 }
 .page {
