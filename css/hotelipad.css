@@ -247,7 +247,28 @@
   width: 100%;
   min-height: 50vh;
   display: flex;
+  position: relative;
   justify-content: center;
+}
+.mid_p{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  background: white;
+  padding: 10px;
+  left: -10.5%;
+  top: 28%;
+  transition: 0.5s ease linear;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 180px;
+}
+.mid_p span{
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.mid_p span i{
+  color: #fdcf6d;
+  font-weight: 200;
 }
 .mid_box_con{
   width: 66%;
@@ -263,7 +284,7 @@
   height: 90%;
 }
 .mid_box_city{
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -275,7 +296,7 @@
 .mid_box_city i{
   color: #fdcf6d;
   font-size: 3rem;
-  animation: rotateLink 2s infinite;
+  animation: rotateLink 10s infinite;
 }
 @keyframes rotateLink{
   0%{rotate: 0deg;}
@@ -347,13 +368,14 @@
 }
 
 .intro_box_right{
+  /* border: 2px solid #302d46; */
   display: flex;
   align-items: center;
-  width: 27%;
+  width: 26%;
   height: 50vh;
 }
 .intro_box_right_swiper{
-  width: 79%;
+  width: 82%;
   border-radius: 10px;
   height: 47vh;
   background: skyblue;
@@ -383,9 +405,6 @@
   height: 45vh;
   width: 70%;
 }
-.hostel_swiper{
-  width: 100%;
-}
 .hostel_swiper_con{
   width: 28%;
   padding: 0 0.5%;
@@ -398,31 +417,38 @@
   background-position: center;
   background-size: cover;
 }
-.hostel_swiper .swiper-slide .con{
+.swiper-slide:hover .con{
+  height: 40%;
+  opacity: 1;
+  transition: 0.4s ease;
+  display: flex;
+}
+.swiper-slide .con{
   position: absolute;
   width: 80%;
   padding: 0 10%;
-  height: 40%;
   border-radius: 0 0 10px 10px;
   bottom: 0;
   display: flex;
+  opacity: 0;
+  height: 0;
   flex-direction: column;
   color: wheat;
   gap: 0.5rem;
   justify-content: center;
   background: rgba(0, 0, 0, 0.6);
 }
-.hostel_swiper .swiper-slide .con span, .hostel_swiper .swiper-slide .con strong{
+.swiper-slide .con span,.swiper-slide .con strong{
   max-width: 80%;
   display: flex;
   flex-wrap: wrap;
 }
-.hostel_swiper .swiper-slide .con strong{
+.swiper-slide .con strong{
   border-bottom: 1px dotted wheat;
   width: max-content;
   max-width: 80%;
 }
-.hostel_swiper .swiper-slide .con a{
+.swiper-slide .con a{
   position: absolute;
   height: 40px;
   width: 70px;
@@ -488,6 +514,16 @@
   .mid_box_con{
     width: 100%;
   }
+  .mid_p{
+    top: 80px;
+    left: 10px;
+  }
+  .mid_box_city i{
+    top: 10px;
+    left: 10px;
+    scale: (0.8);
+    position: absolute;
+  }
   .intro_box_left{
     width: 100%;
     border-radius: 0;
@@ -498,6 +534,9 @@
   .hostel_swiper_box{
     flex-direction: column-reverse;
     align-items: center;
+  }
+  .hostel_swiper{
+    width: 90%;
   }
  
 }
@@ -540,6 +579,17 @@
     display: flex;
     width: 85%;
     padding: 10px 0;
+  }
+  .mid_p{
+    top: 20%;
+    position: relative;
+    /* left: 36%; */
+  }
+  .mid_box_city i{
+    top: 10px;
+    left: 45%;
+    scale: (0.8);
+    /* position: relative; */
   }
 }
 @media all and (max-width:600px){

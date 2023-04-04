@@ -113,7 +113,39 @@
     </section>
     <section class="mid_box">
       <section class="mid_box_con" >
+        <p class="mid_p">
+          Ghana's leading chain of hotels and homes.
+          <br>
+          <span><i class="material-symbols-outlined">house</i>  More Destinations.</span>   
+          <span><i class="material-symbols-outlined">payments</i> More Affordable.</span>
+          <!-- Serenity -->
+        </p>
         <img id="mbci" src="ghana_map.png" alt="">
+        <script>
+          const mid_box = document.querySelector('.mid_box')
+          const mid_p = document.querySelector('.mid_p')
+
+          if(window.innerWidth > 1100){
+            const moveMidP =()=>{
+              mid_box.onpointermove =()=>{
+                var top_val = eval(event.clientY * 70/720)
+                mid_p.style.top = `${top_val}%`
+                var scale_val = eval(event.clientY * 1.6/720)
+                if(scale_val < 1){
+                  scale_val = 1
+                }
+                mid_p.style.scale = scale_val
+              }
+            }
+          }
+        </script>
+
+        <style>
+          .mid_box_con{
+            position: relative;
+          }
+          
+        </style>
 
         <div class="mid_box_city">
           <div class="city_box_holder">
@@ -138,8 +170,48 @@
         </div>
       </section>
     </section>
+
     <script>
       const city_box = document.querySelectorAll('.city_box')
+
+      const shuffleImages =()=>{
+        let images = ['images/kumasi.jpg', 'images/accra.jpg', 'images/accra2.jpg', 'images/accra3.jpg', 'images/accra4.jpg','images/accra5.jpeg'];
+        
+        for (let i = images.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [images[i], images[j]] = [images[j], images[i]];
+        }
+        
+        city_box.forEach((city,i)=>{
+          city.style.backgroundImage = `url('${images[i]}')`
+          anime({
+            targets: city,
+            opacity: [0,1],
+            delay : 200 * i,
+            duration: 200,
+            easing: 'spring(1, 80, 10, 0)',
+          });
+        })
+      }
+
+      const mid_box_city = document.querySelector('.mid_box_city')
+      mid_box_city.onmouseleave =()=>{
+        shuffleInterval()
+      }
+
+      function shuffleInterval(){
+        const shuff = 
+        setInterval(()=>{
+          shuffleImages()
+          mid_box_city.onmouseenter =()=>{
+            clearInterval(shuff)
+          }
+        },8000)
+      }shuffleInterval()
+      
+
+
+      
       const makeCity =(i)=>{
         city_box[i].style.zIndex = 1
       }
@@ -178,9 +250,30 @@
       <section class="intro_box_right">
         <div class="intro_box_right_swiper swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(images/room2.jpg);">Slide 2</div>
-            <div class="swiper-slide" style="background-image: url(images/room3.jpg);">Slide 3</div>
-            <div class="swiper-slide" style="background-image: url(images/room1.jpg);">Slide 4</div>
+            <div class="swiper-slide" style="background-image: url(images/room2.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url(images/room3.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -192,7 +285,13 @@
       .intro_box_p{
         transition: 0.3s ease;
       }
-      
+      .intro_box_p.change{
+        animation: appear 0.3s linear;
+      }
+      @keyframes appear{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+      }
       
     </style>
 
@@ -207,8 +306,11 @@
   }
 
   setTimeout(()=>{
+    intro_box_p.forEach(intro=>{
+      intro.classList.add('change')
+    })
     undo_span()
-  },2300)
+  },1700)
 
   do_span =(bi)=>{
     sessionStorage.setItem(`span${bi}`, intro_box_p[bi].innerHTML)
@@ -263,6 +365,9 @@
         clickable: true,
       },
     });
+    intro_box_right_swiper.el.onmouseenter =()=>{
+      intro_box_right_swiper.autoplay.stop()
+    }
     </script>
 
     <section class="hostel_swiper_box">
@@ -278,7 +383,7 @@
       </div>
       <div class="hostel_swiper swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room5.jpg);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -286,7 +391,7 @@
               <a href="">-></a>
             </div>
           </div>
-          <div class="swiper-slide" style="background-image: url(images/room2.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room4.jpg);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -294,7 +399,7 @@
               <a href="">-></a>
             </div>
           </div>
-          <div class="swiper-slide" style="background-image: url(images/room3.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room7.webp);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -302,7 +407,7 @@
               <a href="">-></a>
             </div>
           </div>
-          <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room6.jpg);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -310,7 +415,7 @@
               <a href="">-></a>
             </div>
           </div>
-          <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room8.jpg);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -318,7 +423,7 @@
               <a href="">-></a>
             </div>
           </div>
-          <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
+          <div class="swiper-slide" style="background-image: url(images/room9.jpg);">
             <div class="con">
               <strong>New Palace</strong>
               <span>Ahodwo</span>
@@ -334,29 +439,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/index.js"></script>
-  <script>
-
-    if(window.innerWidth < 740 && window.innerWidth >  450){
-      var slideNum = 2
-    }else if(window.innerWidth  < 450){
-      var slideNum = 1
-    }else{
-      var slideNum = 3
-    }
-    var hostel_swiper = new Swiper(".hostel_swiper", {
-      slidesPerView: slideNum,
-      spaceBetween: 20,
-      loop:true,
-      speed: 1000,
-      autoplay:{
-        delay:3500
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
+  <script src="js/swiper.js"></script>
   <script>
     config = {
       altInput: true,
