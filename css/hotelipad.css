@@ -3,6 +3,8 @@
   --theme: #fdcf6d;
   /* --theme: #3056d3; */
   --info-text-color: #302d46;
+  --info-text-color: #020a31;
+  
   --footer-background:rgb(32, 20, 20);
 }
 .head_nav{
@@ -394,6 +396,7 @@
   min-height: 25vh;
   display: flex;
   gap: 1rem;
+  transition: 0.5s ease;
   justify-content: space-around;
   align-items: flex-end;
 }
@@ -408,8 +411,9 @@
 .hostel_swiper_con{
   width: 28%;
   padding: 0 0.5%;
-  background: skyblue;
-  height: 25vh;
+  /* background: skyblue; */
+  background: whitesmoke;
+  min-height: 45vh;
 }
 .hostel_swiper .swiper-slide{
   border-radius: 10px;
