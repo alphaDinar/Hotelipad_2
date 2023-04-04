@@ -599,7 +599,7 @@
     border-radius: 10px;
   }
   .head_box .input_field{
-    width: 80%;
+    min-width: 80%;
   }
   #guest_num{
     width: 91%;

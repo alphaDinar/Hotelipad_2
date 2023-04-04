@@ -6,7 +6,7 @@ window.onresize =()=>{
 }
 
 const makeHostelSwiper =()=>{
-  if(window.innerWidth < 840 && window.innerWidth >  450){var slideNum = 2}else if(window.innerWidth  < 450){var slideNum = 1}else{var slideNum = 3}
+  if(window.innerWidth < 840 && window.innerWidth >  480){var slideNum = 2}else if(window.innerWidth  < 480){var slideNum = 1}else{var slideNum = 3}
     var hostel_swiper = new Swiper(".hostel_swiper", {
       slidesPerView: slideNum,
       spaceBetween: 20,
