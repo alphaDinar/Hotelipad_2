@@ -113,13 +113,7 @@
     </section>
     <section class="mid_box">
       <section class="mid_box_con" >
-        <p class="mid_p">
-          Ghana's leading chain of hotels and homes.
-          <br>
-          <span><i class="material-symbols-outlined">house</i>  More Destinations.</span>   
-          <span><i class="material-symbols-outlined">payments</i> More Affordable.</span>
-          <!-- Serenity -->
-        </p>
+        
         <img id="mbci" src="ghana_map.png" alt="">
         <script>
           const mid_box = document.querySelector('.mid_box')
@@ -134,32 +128,80 @@
         </style>
 
         <div class="mid_box_city">
-          <div class="city_box_holder">
-            <div class="city_box" style="background-image: url(images/kumasi.jpg);"></div>
-          </div>
-          <div class="city_box_holder">
-            <div class="city_box" style="background-image: url(images/accra.jpg);"></div>
-          </div>
-          <div class="city_box_holder">
-            <div class="city_box" style="background-image: url(images/accra2.jpg);"></div>
-          </div>
-          <div class="city_box_holder">
-            <div class="city_box" style="background-image: url(images/accra3.jpg);"></div>
-          </div>
-          <i class="material-symbols-outlined">hub</i> 
-          <div class="city_box_holder">
-            <div class="city_box" style="background-image: url(images/accra4.jpg);"></div>
-          </div>
-          <div class="city_box_holder" style="opacity: 0;">
-            <div class="city_box" style="background-image: url(images/accra5.jpeg);"></div>
+          <div class="mid_box_city_swiper">
+            <img src="images/hot_soft.jpg" alt="">
+            <p class="mid_p">
+              Ghana's leading chain of hotels and homes.
+              <br>
+              <span><i class="material-symbols-outlined">house</i>  More Destinations.</span>   
+              <span><i class="material-symbols-outlined">payments</i> More Affordable.</span>
+              <!-- Serenity -->
+            </p>
           </div>
         </div>
       </section>
     </section>
 
     <script>
+      anime({
+        targets: '.mid_box_city_swiper img',
+        opacity: [0,1],
+        translateX: [-80,0],
+        // delay : 200 * i,
+        duration: 2500,
+        // easing: 'spring(1, 80, 10, 0)',
+      });
+      anime({
+        targets: '.mid_box_city_swiper .mid_p',
+        opacity: [0,1],
+        translateY: [-80,0],
+        // delay : 200 * i,
+        duration: 2500,
+        // easing: 'spring(1, 80, 10, 0)',
+      });
+    </script>
 
 
+    <style>
+      .mid_box_city{
+        /* position: relative; */
+        background-position: center;
+        background-size: cover;
+        /* border: 1px solid black; */
+      }
+      .mid_box_city_swiper{
+        width: 400px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background: white;
+        position: relative;
+      }
+      .mid_box_city_swiper img{
+        width: 290px;
+        height: 250px;
+      }
+      .mid_p{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        position: absolute;
+        background: white;
+        /* color: white; */
+        padding: 10px;
+        left: 80%;
+        top: -30px;
+        transition: 0.5s ease linear;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        width: 180px;
+      }
+      .mid_p i{
+        display: none;
+        display: flex;
+      }
+    </style>
+
+    <!-- <script>
       const city_box = document.querySelectorAll('.city_box')
 
       const shuffleImages =()=>{
@@ -204,7 +246,10 @@
       const midBoxObserver = new IntersectionObserver((entries,observer)=>{
         entries.forEach(entry=>{
           if(entry.isIntersecting){
-            animeCityBox()
+            if(!sessionStorage.getItem('animeCityBox')){
+              animeCityBox()
+              sessionStorage.setItem('animeCityBox',1)
+            }
           }
         })
       },mbo_options)
@@ -214,17 +259,22 @@
         for (let i = 0; i < city_box.length; i++) {
           anime({
             targets: city_box[i],
-            translateY: [100,0],
+            translateX: [-80,0],
             // opacity: [0,1],
             zIndex: [-1,1],
             delay : 200 * i,
-            duration: 500,
-            easing: 'easeInOutQuad'
+            duration: 1000,
+            easing: 'steps(5)',
           });
         }
       }
       
-    </script>
+    </script> -->
+    <style>
+      /* .city_box{
+        border-radius: 20% 0 20% 0;
+      } */
+    </style>
     <section class="intro_box">
       <section class="intro_box_left" >
         <div class="intro_box_left_box">
@@ -282,11 +332,13 @@
         transition: 0.3s ease;
       }
       .intro_box_p.change{
-        animation: appear 0.3s linear;
+        position: relative;
+        animation: appear 0.5s linear;
       }
       @keyframes appear{
         0%{opacity: 0;}
         100%{opacity: 1;}
+        /* 100%{color: #020a31;} */
       }
       
     </style>
@@ -329,7 +381,7 @@
       document.querySelectorAll('.intro_box_p_s').forEach((s,si)=>{
         anime({
           targets: s,
-          translateX: [30,0],
+          translateX: [30,5],
           opacity: [0,1],
           delay : 5 * si,
           easing: 'easeInOutQuad',
@@ -407,16 +459,7 @@
           </div>
         </div>
       </div>
-      <script>
-        // const hostel_info = document.querySelector('.info_swiper')
-        // const info_swiper_slide = document.querySelector('.info_swiper_slide')
 
-        
-
-        
-
-        
-      </script>
       <style>
         .ins_span{
           /* color: rgb(245, 222, 179); */
@@ -558,21 +601,35 @@
             <input type="text" placeholder="email">
           </div>
         </section>
+
+        <script>
+          
+          // footer_mid section div
+
+          const footer = document.querySelector('.footer')
+          const footerObserverOptions ={
+            rootMargin : '-100px'
+          }
+          const footerObserver = new IntersectionObserver((entries,observer)=>{
+            entries.forEach(entry=>{
+              if(entry.isIntersecting){
+                if(!sessionStorage.getItem('buildfp_bigAnimation')){
+                  if(window.innerWidth > 710){
+                    buildfp_bigAnimation()
+                    buildFooter_aAnimation()
+                  }
+                  sessionStorage.setItem('buildfp_bigAnimation',1)
+                }
+              }
+            })
+          },footerObserverOptions)
+
+          footerObserver.observe(footer)
+        </script>
   
         <script>
           const fp_big = document.querySelectorAll('[id=fp_big]')
-          window.onload =()=>{
-            if(window.innerWidth > 710){
-              buildfp_bigAnimation()
-            }
-          }
-          // window.onresize =()=>{
-          //   if(window.innerWidth > 710){
-          //     buildfp_bigAnimation()
-          //   }
-          // }
-
-
+          
           buildfp_bigAnimation =()=>{
             fp_big.forEach(fp=>{
               fp.innerHTML = 
@@ -596,6 +653,25 @@
               })
             })
           }
+
+          const buildFooter_aAnimation = ()=>{
+            let footer_a = document.querySelectorAll('.footer_mid section div a')
+            
+            footer_a.forEach((a,ai)=>{
+              anime({
+                targets: a,
+                translateY: [100,0],
+                opacity: [0,1],
+                delay : 70 * ai,
+                easing: 'easeInOutQuad',
+                duration: 500,
+                begin:()=>{
+                  document.querySelector('.footer').style.overflow = 'hidden'
+                },
+              });
+            })
+          }
+
   
         </script>
         <hr>
@@ -668,6 +744,9 @@
   
   </section>
 
+  <script>
+    
+  </script>
   
 
   <script>

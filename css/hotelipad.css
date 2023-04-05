@@ -249,7 +249,7 @@
   position: relative;
   justify-content: center;
 }
-.mid_p{
+/* .mid_p{
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: absolute;
   background: white;
@@ -259,7 +259,7 @@
   transition: 0.5s ease linear;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 180px;
-}
+} */
 .mid_p span{
   display: flex;
   gap: 3px;
@@ -277,6 +277,7 @@
   justify-content: center;
   justify-content: space-around;
   background: whitesmoke;
+  /* background: #fff0ed; */
   height: 50vh;
 }
 .mid_box_con #mbci{
@@ -289,10 +290,10 @@
   align-items: center;
   justify-content: space-around;
   gap: 3.5rem;
-  width: 50%;
+  width: 60%;
   height: 100%;
 }
-.mid_box_city i{
+/* .mid_box_city i{
   color: #fdcf6d;
   font-size: 3rem;
   animation: rotateLink 10s infinite;
@@ -301,7 +302,7 @@
   0%{rotate: 0deg;}
   50%{rotate: 360deg;}
   100%{rotate: 0deg;}
-}
+} */
 .city_box_holder{
   position: relative;
   min-height: 100px;
