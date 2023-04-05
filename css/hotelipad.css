@@ -117,7 +117,7 @@
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  max-width: 95%;
+  /* max-width: 95%; */
   padding: 10px 10px 10px 30px;
   background: var(--theme);
   color: rgb(112, 111, 111);
@@ -141,9 +141,6 @@
   font-size: 1rem;
   padding: 8px 10px;
   background: white;
-  /* background: transparent; */
-  /* border-bottom: 1px solid white; */
-  /* color: white; */
   border-radius: 5px;
 }
 #guest_num{
@@ -373,7 +370,7 @@
   /* border: 2px solid #302d46; */
   display: flex;
   align-items: center;
-  width: 26%;
+  width: 26.1%;
   height: 50vh;
 }
 .intro_box_right_swiper{
@@ -396,23 +393,33 @@
   min-height: 25vh;
   display: flex;
   gap: 1rem;
+  /* border: 5px solid gold; */
   transition: 0.5s ease;
   justify-content: space-around;
   align-items: flex-end;
+}
+.hostel_swiper_holder{
+  width: 75%;
+  gap: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 45vh;
+  
 }
 .hostel_swiper_box .top, .hostel_swiper_box .low{
   display: flex;
   align-items: flex-end;
 }
 .hostel_swiper{
-  height: 45vh;
-  width: 70%;
+  margin: 0 !important;
+  min-height: 45vh;
+  border-radius: 10px;
+  width: 30%;
 }
 .hostel_swiper_con{
-  width: 28%;
+  width: 25%;
   padding: 0 0.5%;
-  /* background: skyblue; */
-  background: whitesmoke;
+  /* border: 1px solid black; */
   min-height: 45vh;
 }
 .hostel_swiper .swiper-slide{
@@ -466,6 +473,146 @@
   border-radius: 0 0 10px 0;
 }
 
+.footer{
+  width: 100%;
+  background: #020a31;
+  --mask:radial-gradient(44.60px at 50% 63.00px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,radial-gradient(44.60px at 50% -33px,#0000 99%,#000 101%) 50% 30px/120px 100% repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);  
+}
+.footer_cover{
+  padding: 50px 0 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer hr{
+  width: 80%;
+  border-top: 2px dotted white;
+}
+.footer_top{
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.footer_top p{
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.footer_top p a{
+  background: white;
+  font-size: 1rem;
+  color: #302d46;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.footer a{
+  color: white;
+}
+.fp_span{
+  display: inline-block;
+}
+.footer_mail{
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  padding: 1.5% 0;
+}
+.footer_mail p{
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.footer_mail .input_field{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
+.footer_mail .input_field i{
+  padding: 10px;
+  background: white;
+  color: #fdcf6d;
+}
+.footer_mail .input_field input{
+  min-width: 200px;
+  padding: 10px;
+}
+.footer_mid{
+  width: 100%;
+  padding: 1.5% 0;
+  display: flex;
+  justify-content: space-around;
+}
+@media all and (max-width:1000px){
+  .footer hr{
+    width: 97%;
+  }
+  .footer_top,.footer_mail{
+    padding: 10px 0;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer_mid{
+    gap: 2rem;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    /* border: 1px solid white; */
+  }
+}
+@media all and (max-width:800px){
+  .footer_mid section{
+    text-align: center;
+    width:98%;
+    justify-content: space-around;
+  }
+}
+@media all and (max-width:710px){
+  .footer_mail{
+    width: 95%;
+  }
+  .footer_top p, .footer_mail p{
+    width: 95%;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+@media all and (max-width:510px){
+  .footer_mid section{
+    padding: 10px 0;
+    flex-direction: column;
+  }
+  #low_span_vanish{
+    display: none;
+  }
+}
+.footer_mid section{
+  display: flex;
+  gap: 3rem;
+}
+.footer_mid section div{
+  color: #fdcf6d;
+  color: white;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
 @media all and (max-width:1200px){
   #head_nav_tag{
     position: absolute;
@@ -482,7 +629,7 @@
   .head_nav{
     position: absolute;
     top: 0;
-    left: -255px;
+    left: -249px;
     z-index: 100;
     background: white;
     flex-direction: column;
@@ -513,7 +660,11 @@
     justify-content: center;
     padding: 10px 0 10px 0;
     gap: 1rem;
-    border-radius: 0;
+    /* width: auto ; */
+    border-radius: 20px;
+  }
+  .head_box_con form .input_field button{
+    border-radius: 10px;
   }
   .mid_box_con{
     width: 100%;
@@ -535,16 +686,32 @@
   .intro_box_right{
     display: none;
   }
+
   .hostel_swiper_box{
     flex-direction: column-reverse;
     align-items: center;
   }
-  .hostel_swiper{
-    width: 90%;
+  .hostel_swiper_con{
+    width: 50%;
+    min-height: auto;
   }
- 
+  .hostel_swiper_con .info{
+    position: relative !important;
+  }
+  .hostel_swiper_holder{
+    width: 95%;
+    /* border: 2px solid skyblue; */
+  }
+  .hostel_swiper{
+    width: 100%;
+  }
 }
-@media all and (max-width:820px){
+
+@media all and (max-width:1000px){
+
+}
+
+@media all and (max-width:830px){
   .mid_box_con{
     min-height: auto;
     height: auto;
@@ -567,6 +734,15 @@
     padding: 10px 1%;
     overflow: hidden;
     border-radius: 10px;
+  }
+  .hostel_swiper_con{
+    width: 95%;
+    padding: 0 0.5%;
+    /* border: 1px solid black; */
+    min-height: auto;
+  }
+  .hs3{
+    display: none;
   }
 }
 @media all and (max-width:740px){
@@ -597,18 +773,31 @@
   }
 }
 @media all and (max-width:600px){
+  .head_box{
+    justify-content: center;
+    align-items: center;
+  }
+  .head_box_con{
+    align-items: center;
+  }
   .head_box_con form{
     padding: 10px;
     gap: 1rem;
+    width: 90%;
     border-radius: 10px;
   }
+  /* .head_box_con form */
   .head_box .input_field{
-    min-width: 80%;
+    min-width: 90%;
+    max-width: 90%;
   }
   #guest_num{
-    width: 91%;
+    padding: 10px 0;
+    width: 100%;
   }
-  .head_box_con form input{
+  .head_box_con form .input_field input{
+    padding: 10px 0;
+    width: 100%;
     text-align: center;
   }
   .head_box_con p{
@@ -618,5 +807,15 @@
   }
   .hostel_swiper{
     width: 90%;
+  }
+  
+}
+
+@media all and (max-width:520px){
+  .hostel_swiper_holder{
+    justify-content: center;
+  }
+  .hs2{
+    display: none;
   }
 }

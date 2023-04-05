@@ -123,29 +123,7 @@
         <img id="mbci" src="ghana_map.png" alt="">
         <script>
           const mid_box = document.querySelector('.mid_box')
-
-          
-
-
           const mid_p = document.querySelector('.mid_p')
-
-          // const moveMidP =()=>{
-          //   mid_box.onpointermove =()=>{
-          //     var top_val = eval(event.clientY * 70/720)
-          //     mid_p.style.top = `${top_val}%`
-          //     var scale_val = eval(event.clientY * 1.6/720)
-          //     if(scale_val < 1){
-          //       scale_val = 1
-          //     }
-          //     mid_p.style.scale = scale_val
-          //   }
-          // }
-
-          // if(window.innerWidth > 1100){
-          //   moveMidP()
-          // }
-          
-          // moveMidP()
         </script>
 
         <style>
@@ -317,6 +295,10 @@
   const intro_box = document.querySelector('.intro_box')
   const intro_box_p = document.querySelectorAll('.intro_box_p')
   const intro_box_left_box = document.querySelectorAll('.intro_box_left_box')
+  // window.onload =()=>{
+    sessionStorage.clear()
+    console.log('me')
+  // }
 
   const ibo_options = {
     // rootMargin:'-100px'
@@ -324,8 +306,10 @@
   const introBoxObserver = new IntersectionObserver((entries,observer)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-        console.log(entry.target)
-        animeIntroBoxP()
+        if(!sessionStorage.getItem('animeIntroBoxP')){
+          animeIntroBoxP()
+          sessionStorage.setItem('animeIntroBoxP',1)
+        }
       }
     })
   },ibo_options)
@@ -381,14 +365,14 @@
   }
     </script> 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
+    <!-- <script>
       var intro_box_right_swiper = new Swiper(".intro_box_right_swiper", {
       loop:true,
       direction:'vertical',
       autoplay:{
-        delay:3500
+        delay:9000
       },
-      speed: 1000,
+      speed: 1500,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -397,90 +381,294 @@
     intro_box_right_swiper.el.onmouseenter =()=>{
       intro_box_right_swiper.autoplay.stop()
     }
-    </script>
+    </script> -->
+
+    
 
     <section class="hostel_swiper_box">
       <div class="hostel_swiper_con">
-        <div class="info" id="con_info">
-          <strong><i class="material-symbols-outlined">roofing</i>  Featured Hostels <i class="material-symbols-outlined">roofing</i></strong>
+        <div class="info info_swiper swiper" id="con_info">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide info_swiper_slide" data-id="0">
+              <strong>Relax and unwind </strong>
+              <p>in our peaceful oasis</p>
+              <!-- <p>at its finest with our stunning hotel rooms, each designed to provide ultimate comfort and relaxation during your stay. </p> -->
+            </div>
+            <div class="swiper-slide info_swiper_slide" data-id="1">
+              <strong>Escape</strong>
+              <p>to paradise and indulge in luxury at our hotels. </p>
+            </div>
+            <div class="swiper-slide info_swiper_slide" data-id="2">
+              <strong>Discover</strong>
+              <p>unparalleled luxury. </p>
+              <!-- and exceptional service. -->
+            </div>
+            
+          </div>
         </div>
+      </div>
+      <script>
+        // const hostel_info = document.querySelector('.info_swiper')
+        // const info_swiper_slide = document.querySelector('.info_swiper_slide')
+
         
-      </div>
-      <div class="hostel_swiper swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url(images/room5.jpg);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
+
+        
+
+        
+      </script>
+      <style>
+        .ins_span{
+          /* color: rgb(245, 222, 179); */
+          display: inline-block;
+        }
+      </style>
+
+      <style>
+        .hostel_swiper_con{
+          display: flex;
+          justify-content: center;
+          position: relative;
+        }
+        .hostel_swiper_con .info{
+          width: 100%;
+          height: 20vh;
+          /* border: 1px solid black; */
+          transition: 0.5s linear;
+          position: absolute;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          /* color: white; */
+          /* border-radius: 30px; */
+          /* background: #23a9f4; */
+          color: #fdcf6d;
+          color: #020a31;
+          top: 25%;
+          /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+        }
+        .hostel_swiper_con .info .swiper-slide{
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+          justify-content: center;
+          align-items: center;
+          width: 95%;
+          height: 100%;
+          padding: 0 2.5%;
+          text-align: center;
+        }
+        .hostel_swiper_con .info .swiper-slide strong, .ins_span{
+          text-align: center;
+          font-size: 1.6rem;
+          /* font-family: 'DessauProDrei'; */
+          font-weight: 600;
+        }
+        .hostel_swiper_con .info .swiper-slide p{
+          word-spacing: 3px;
+          padding-bottom: 1rem;
+          border-bottom: 2px dotted #fdcf6d;
+          /* border: 1px solid wheat; */
+          width: 90%;
+          /* padding: 0 5%; */
+          font-size: 1.2rem;
+        }
+      </style>
+
+      <section class="hostel_swiper_holder">
+        <div class="hostel_swiper hs1 swiper ">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(images/room7.webp);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
             </div>
-          </div>
-          <div class="swiper-slide" style="background-image: url(images/room4.jpg);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
-            </div>
-          </div>
-          <div class="swiper-slide" style="background-image: url(images/room7.webp);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
-            </div>
-          </div>
-          <div class="swiper-slide" style="background-image: url(images/room6.jpg);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
-            </div>
-          </div>
-          <div class="swiper-slide" style="background-image: url(images/room8.jpg);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
-            </div>
-          </div>
-          <div class="swiper-slide" style="background-image: url(images/room9.jpg);">
-            <div class="con">
-              <strong>New Palace</strong>
-              <span>Ahodwo</span>
-              <span>Ghc 45,00 - per night</span>
-              <a href="">-></a>
+            <div class="swiper-slide" style="background-image: url(images/room8.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="hostel_swiper hs2 swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(images/room9.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url(images/room3.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hostel_swiper hs3 swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url(images/room5.jpg);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url(images/room10.avif);">
+              <div class="con">
+                <strong>New Palace</strong>
+                <span>Ahodwo</span>
+                <span>Ghc 45,00 - per night</span>
+                <a href="">-></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </section>
+
+    <section class="footer">
+      <section class="footer_cover">
+        <section class="footer_top">
+          <img src="images/loog.png" alt="" width="160px" height="60px">
+          <p>
+            <span id="fp_big">Join our network and grow your business!</span> 
+            <a href=""> <i class="material-symbols-outlined">real_estate_agent</i>  List Your Property</a>
+          </p>
+        </section>
+        <hr>
+        <section class="footer_mail">
+          <p id="fp_big">Subscribe for more updates on our programs</p>
+          <div class="input_field">
+            <i class="material-symbols-outlined">mail</i>
+            <input type="text" placeholder="email">
+          </div>
+        </section>
+  
+        <script>
+          const fp_big = document.querySelectorAll('[id=fp_big]')
+          window.onload =()=>{
+            if(window.innerWidth > 710){
+              buildfp_bigAnimation()
+            }
+          }
+          // window.onresize =()=>{
+          //   if(window.innerWidth > 710){
+          //     buildfp_bigAnimation()
+          //   }
+          // }
+
+
+          buildfp_bigAnimation =()=>{
+            fp_big.forEach(fp=>{
+              fp.innerHTML = 
+              fp.innerHTML.split('').map((span)=>{
+                if(span === ' '){
+                  span = '&nbsp '
+                }
+                return `<span class='fp_span'>${span}</span>`
+              }).join('')
+              
+              const fp_span = document.querySelectorAll('.fp_span')
+              fp_span.forEach((fps,fi)=>{
+                anime({
+                  targets: fps,
+                  translateX: [30,0],
+                  opacity: [0,1],
+                  delay : 10 * fi,
+                  easing: 'easeInOutQuad',
+                  duration: 300,
+                });
+              })
+            })
+          }
+  
+        </script>
+        <hr>
+        <section class="footer_mid">
+          <section>
+            <div>
+              <a href="">About Us</a>
+              <a href="">Teams / Careers</a>
+              <a href="">Blogs</a>
+              <a href="">Support</a>
+            </div>
+            <div id="low_span_vanish">
+              <a href="">Official Hotelipad Blog</a>
+              <a href="">Investor Relations</a>
+            </div>
+          </section>
+          <section>
+            <div>
+              <a href="">Terms and conditions</a>
+              <a href="">Guest Policies</a>
+              <a href="">Privacy Policy</a>
+              <a href="">Trust And Safety</a>
+            </div>
+            <div id="low_span_vanish">
+              <a href="">Cyber Security</a>
+              <a href="">Cyber Security Awareness</a>
+              <a href="">Responsible Disclosure</a>
+            </div>
+          </section>
+        </section>
+        <hr>
+        <section class="footer_mid">
+          <section>
+            <div>
+              <a href="">Hotels in Ahodwo</a>
+              <a href="">Hotels in Accra</a>
+              <a href="">Hotels in East Legon</a>
+              <a href="">Hotels in Asokwa</a>
+            </div>
+            <div id="low_span_vanish">
+              <a href="">Hotels in Ahodwo</a>
+              <a href="">Hotels in Accra</a>
+              <a href="">Hotels in East Legon</a>
+              <a href="">Hotels in Asokwa</a>
+            </div>
+            <div id="low_span_vanish">
+              <a href="">Hotels in Ahodwo</a>
+              <a href="">Hotels in Accra</a>
+              <a href="">Hotels in East Legon</a>
+              <a href="">Hotels in Asokwa</a>
+            </div>
+          </section>
+          <section id="low_span_vanish">
+            <div>
+              <a href="">Hotels in Ahodwo</a>
+              <a href="">Hotels in Accra</a>
+              <a href="">Hotels in East Legon</a>
+              <a href="">Hotels in Asokwa</a>
+            </div>
+            <div>
+              <a href="">Hotels in Ahodwo</a>
+              <a href="">Hotels in Accra</a>
+              <a href="">Hotels in East Legon</a>
+              <a href="">Hotels in Asokwa</a>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+  
   </section>
 
-  <style>
-    .hostel_swiper_con{
-      display: flex;
-      justify-content: center;
-      position: relative;
-      /* border: 1px solid black; */
-    }
-    .hostel_swiper_con .info{
-      width: 100%;
-      /* height: 25vh; */
-      min-height: 25vh;
-      /* background: salmon; */
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      background: white;
-      transition: 0.5s linear;
-      position: absolute;
-      top: 0;
-      /* top: 20vh; */
-    }
-  </style>
+  
 
   <script>
     const hostel_swiper_box = document.querySelector('.hostel_swiper_box')
@@ -497,174 +685,11 @@
       })
     }, hsb_options) 
 
-    window.onscroll =()=>{
-      console.log(hostel_swiper_box.scrollTop)
-    }
+    // window.onscroll =()=>{
+    //   console.log(hostel_swiper_box.scrollTop)
+    // }
 
-    // hostelSwiperBoxObserver.observe(hostel_swiper_box)
   </script>
-
-  <section class="footer">
-    <section class="footer_cover">
-      <section class="footer_top">
-        <img src="images/loog.png" alt="" width="160px" height="60px">
-        <p>
-          Join our network and grow your business!
-          <a href=""> <i class="material-symbols-outlined">real_estate_agent</i>  List Your Property</a>
-        </p>
-      </section>
-      <hr>
-      <section class="footer_mid">
-        <section>
-          <div>
-            <a href="">About Us</a>
-            <a href="">Teams / Careers</a>
-            <a href="">Blogs</a>
-            <a href="">Support</a>
-          </div>
-          <div>
-            <a href="">Official Hotelipad Blog</a>
-            <a href="">Investor Relations</a>
-          </div>
-        </section>
-        <section>
-          <div>
-            <a href="">Terms and conditions</a>
-            <a href="">Guest Policies</a>
-            <a href="">Privacy Policy</a>
-            <a href="">Trust And Safety</a>
-          </div>
-          <div>
-            <a href="">Cyber Security</a>
-            <a href="">Cyber Security Awareness</a>
-            <a href="">Responsible Disclosure</a>
-          </div>
-        </section>
-      </section>
-      <hr>
-      <section class="footer_mid">
-        <section>
-          <div>
-            <a href="">Hotels in Ahodwo</a>
-            <a href="">Hotels in Accra</a>
-            <a href="">Hotels in East Legon</a>
-            <a href="">Hotels in Asokwa</a>
-          </div>
-          <div>
-            <a href="">Hotels in Ahodwo</a>
-            <a href="">Hotels in Accra</a>
-            <a href="">Hotels in East Legon</a>
-            <a href="">Hotels in Asokwa</a>
-          </div>
-          <div>
-            <a href="">Hotels in Ahodwo</a>
-            <a href="">Hotels in Accra</a>
-            <a href="">Hotels in East Legon</a>
-            <a href="">Hotels in Asokwa</a>
-          </div>
-        </section>
-        <section>
-          <div>
-            <a href="">Hotels in Ahodwo</a>
-            <a href="">Hotels in Accra</a>
-            <a href="">Hotels in East Legon</a>
-            <a href="">Hotels in Asokwa</a>
-          </div>
-          <div>
-            <a href="">Hotels in Ahodwo</a>
-            <a href="">Hotels in Accra</a>
-            <a href="">Hotels in East Legon</a>
-            <a href="">Hotels in Asokwa</a>
-          </div>
-        </section>
-      </section>
-    </section>
-  </section>
-
-  <style>
-    .footer hr{
-      width: 80%;
-      border-top: 2px dotted white;
-    }
-    
-
-    .footer_mid{
-      width: 100%;
-      padding: 1.5% 0;
-      display: flex;
-      justify-content: space-around;
-    }
-    .footer_mid section{
-      display: flex;
-
-      /* flex-direction: column; */
-      gap: 3rem;
-      /* justify-content: ; */
-    }
-    .footer_mid section div{
-      color: #fdcf6d;
-      color: white;
-      gap: 0.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-
-    .footer_top{
-      width: 100%;
-      /* padding: 0 5%; */
-      min-height: 10vh;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      /* border: 1px solid white; */
-    }
-    .footer_top p{
-      color: white;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    .footer_top p a{
-      background: #fdcf6d;
-      background: white;
-      font-size: 1rem;
-      color: #302d46;
-      
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      border-radius: 5px;
-    }
-
-
-    .footer{
-      width: 100%;
-      /* background: #302d46; */
-      /* background-image: url(bg4.png); */
-      /* background: #101d45; */
-      background: #020a31;
-      background-position: center;
-      background-size: cover;
-      --mask:radial-gradient(44.60px at 50% 63.00px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,radial-gradient(44.60px at 50% -33px,#0000 99%,#000 101%) 50% 30px/120px 100% repeat-x;
-      -webkit-mask: var(--mask);
-      mask: var(--mask);
-          
-    }
-    .footer_cover{
-      padding: 50px 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .footer a{
-      color: white;
-      /* color: #302d46; */
-    }
-  </style>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
