@@ -15,6 +15,7 @@
   <title>Hotelipad</title>
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <section class="page">
     <nav class="head_nav">
       <img src="images/loog.png" alt="" width="160px" height="60px">
@@ -128,77 +129,91 @@
         </style>
 
         <div class="mid_box_city">
-          <div class="mid_box_city_swiper">
-            <img src="images/hot_soft.jpg" alt="">
-            <p class="mid_p">
-              Ghana's leading chain of hotels and homes.
-              <br>
-              <span><i class="material-symbols-outlined">house</i>  More Destinations.</span>   
-              <span><i class="material-symbols-outlined">payments</i> More Affordable.</span>
-              <!-- Serenity -->
-            </p>
+          <div class="mid_box_city_swiper_box">
+            <div class="mid_box_city_image_swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="images/hot_soft.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/summer.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/book2.avif" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="mid_box_city_con_swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <p class="mid_p">
+                    Ghana's leading chain of hotels and homes.
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <p class="mid_p">
+                    Serenity
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <p class="mid_p">
+                    Serenity
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </section>
 
     <script>
+      var mid_box_city_image_swiper = new Swiper(".mid_box_city_image_swiper", {
+        // direction: 'vertical',
+        loop:true,
+        speed: 1500,
+        autoplay:{
+          delay:3000,
+          // reverseDirection: true,
+        },
+      });
+      var mid_box_city_con_swiper = new Swiper(".mid_box_city_con_swiper", {
+        direction:'vertical',
+        loop:true,
+        speed: 1000,
+      });
+      mid_box_city_image_swiper.on('slideChange',()=>{
+        mid_box_city_con_swiper.slideNext()
+      })
+    </script>
+
+    <!-- <script>
       anime({
-        targets: '.mid_box_city_swiper img',
+        targets: '.mid_box_city',
         opacity: [0,1],
         translateX: [-80,0],
-        // delay : 200 * i,
         duration: 2500,
-        // easing: 'spring(1, 80, 10, 0)',
+      });
+    </script>     -->
+
+    <!-- <script>
+      anime({
+        targets: '.mid_box_city_image_swiper',
+        opacity: [0,1],
+        translateX: [-80,0],
+        duration: 2500,
       });
       anime({
-        targets: '.mid_box_city_swiper .mid_p',
+        targets: '.mid_box_city_con_swiper',
         opacity: [0,1],
         translateY: [-80,0],
-        // delay : 200 * i,
         duration: 2500,
-        // easing: 'spring(1, 80, 10, 0)',
       });
-    </script>
+    </script> -->
 
 
     <style>
-      .mid_box_city{
-        /* position: relative; */
-        background-position: center;
-        background-size: cover;
-        /* border: 1px solid black; */
-      }
-      .mid_box_city_swiper{
-        width: 400px;
-        height: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        background: white;
-        position: relative;
-      }
-      .mid_box_city_swiper img{
-        width: 290px;
-        height: 250px;
-      }
-      .mid_p{
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        position: absolute;
-        background: white;
-        /* color: white; */
-        padding: 10px;
-        left: 80%;
-        top: -30px;
-        transition: 0.5s ease linear;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        width: 180px;
-      }
-      .mid_p i{
-        display: none;
-        display: flex;
-      }
+      
     </style>
 
     <!-- <script>
@@ -462,7 +477,6 @@
 
       <style>
         .ins_span{
-          /* color: rgb(245, 222, 179); */
           display: inline-block;
         }
       </style>
@@ -476,20 +490,14 @@
         .hostel_swiper_con .info{
           width: 100%;
           height: 20vh;
-          /* border: 1px solid black; */
           transition: 0.5s linear;
           position: absolute;
           overflow: hidden;
           display: flex;
           align-items: center;
           justify-content: center;
-          /* color: white; */
-          /* border-radius: 30px; */
-          /* background: #23a9f4; */
-          color: #fdcf6d;
           color: #020a31;
           top: 25%;
-          /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
         }
         .hostel_swiper_con .info .swiper-slide{
           display: flex;
@@ -690,7 +698,7 @@
           </section>
           <section>
             <div>
-              <a href="">Terms and conditions</a>
+              <a href="" target="_blank">Terms and conditions</a>
               <a href="">Guest Policies</a>
               <a href="">Privacy Policy</a>
               <a href="">Trust And Safety</a>
