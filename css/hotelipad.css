@@ -93,7 +93,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 .head_box_con{
-  width: 85%;
+  /* width: 70%; */
   min-height: 60vh;
   display: flex;
   justify-content: space-between;
@@ -114,23 +114,29 @@
 .head_box_con form{
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
   justify-content: space-between;
   align-items: center;
+  /* width:90%; */
   /* max-width: 95%; */
   padding: 10px 10px 10px 30px;
   background: var(--theme);
+  background: white;
+  /* background: red; */
   color: rgb(112, 111, 111);
-  border-radius: 100px;
+  border-radius: 10px;
 }
 .head_box_con form .input_field{
   display: flex;
+  border: 1px solid rgb(212, 212, 212);
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 .head_box_con form .input_field span{
   font-size: 0.9rem;
-  display: none;
+  padding: 8px 10px;
+  /* display: none; */
   color:  var(--info-text-color);
 }
 .head_box_con form .input_field input, #guest_num{
@@ -139,14 +145,16 @@
   color: rgb(114, 114, 114);
   background: transparent;
   font-size: 1rem;
+  /* border: 1px solid black; */
+  font-weight: 600;
   padding: 8px 10px;
   background: white;
   border-radius: 5px;
 }
 #guest_num{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   gap: 0.5rem;
   width: 200px;
 }
@@ -155,6 +163,7 @@
 }
 .head_box_con form .input_field input::placeholder{
   color: rgb(114, 114, 114);
+  font-weight: 600;
   /* color: white; */
 }
 .room_nav_box{
@@ -226,7 +235,7 @@
 }
 .head_box_con form .input_field button{
   padding:10px 10px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,6 +244,7 @@
   background:  var(--info-text-color);
   color:  var(--info-text-color);
   color: #fdcf6d;
+  border-radius: 10px;
 }
 .head_box_con form .input_field button i{
   background:  var(--info-text-color);
