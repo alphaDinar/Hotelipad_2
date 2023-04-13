@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/base.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <link rel="stylesheet" href="css/hotelipad.css">
+  <link rel="stylesheet" href="css/footer.css">
   <title>Hotelipad</title>
 </head>
 <body>
@@ -21,7 +20,7 @@
       <img src="images/loog.png" alt="" width="160px" height="60px">
       <!-- <span id="logo">Hotelipad</span> -->
       <p>
-        <a href="">
+        <a href="partner.html">
           <i class="material-symbols-outlined">real_estate_agent</i>
           <small>
             <strong>List Your Property</strong>
@@ -50,6 +49,7 @@
       </article>
       <button class="material-symbols-outlined" id="head_nav_tag">menu</button>
     </nav>
+    
     <section class="head_box">
       <nav class="social_nav">
         <i class="fa-brands fa-facebook-f"></i>
@@ -130,10 +130,29 @@
 
         <div class="mid_box_city">
           <div class="mid_box_city_swiper_box">
+            <div class="mid_box_city_con_swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <p class="mid_p" style="background: skyblue;">
+                    Best
+                  </p>
+                </div>
+                <div class="swiper-slide" style="background: #fdcf6d;">
+                  <p class="mid_p">
+                    Serenity
+                  </p>
+                </div>
+                <div class="swiper-slide">
+                  <p class="mid_p">
+                    Serenity
+                  </p>
+                </div>
+              </div>
+            </div>
             <div class="mid_box_city_image_swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="images/hot_soft.jpg" alt="">
+                  <img src="images/vector-3d-isometric-illustration-interior-hotel-lobby-with-reception_1441-251.jpg" alt="">
                 </div>
                 <div class="swiper-slide">
                   <img src="images/summer.png" alt="">
@@ -143,22 +162,16 @@
                 </div>
               </div>
             </div>
-            <div class="mid_box_city_con_swiper swiper">
+            <div class="mid_box_city_text_swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <p class="mid_p">
-                    Ghana's leading chain of hotels and homes.
-                  </p>
+                  <p>Ghana's Leading Home and Hostel management platform</p>
                 </div>
                 <div class="swiper-slide">
-                  <p class="mid_p">
-                    Serenity
-                  </p>
+                  <p>CSCCSCSCS</p>
                 </div>
                 <div class="swiper-slide">
-                  <p class="mid_p">
-                    Serenity
-                  </p>
+                  <p>CCSSCCSSC</p>
                 </div>
               </div>
             </div>
@@ -166,6 +179,63 @@
         </div>
       </section>
     </section>
+
+    <!-- <style>
+      .mid_p{
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .mid_box_city_con_swiper{
+        background: skyblue;
+        color: white;
+      }
+    </style> -->
+
+    <style>
+      .mid_box_city_image_swiper .swiper-slide, .mid_box_city_con_swiper .swiper-slide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mid_box_city_image_swiper{
+        width: 300px;
+      }
+      /* .mid_box_city_image_swiper .swiper-slide{
+        flex-direction: column;
+      } */
+      .mid_box_city_image_swiper img{
+        width: 290px;
+        height: 250px;
+      }
+      .mid_box_city_image_swiper p{
+        width: 90%;
+        padding: 0 5%;
+        text-align: center;
+        font-size: 1rem;
+      }
+      .mid_box_city_con_swiper{
+        z-index: 10;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        transition: 0.5s ease linear;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .mid_box_city_text_swiper{
+        width: 60%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .mid_box_city_text_swiper .swiper-slide{
+        display: flex;
+        height: 8vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    </style>
+
 
     <script>
       var mid_box_city_image_swiper = new Swiper(".mid_box_city_image_swiper", {
@@ -180,116 +250,24 @@
       var mid_box_city_con_swiper = new Swiper(".mid_box_city_con_swiper", {
         direction:'vertical',
         loop:true,
-        speed: 1000,
+        speed: 1500,
+      });
+      var mid_box_city_text_swiper = new Swiper(".mid_box_city_text_swiper", {
+        // direction: 'vertical',
+        loop:true,
+        speed: 1500,
+        autoplay:{
+          delay:3000,
+          reverseDirection: true,
+        },
       });
       mid_box_city_image_swiper.on('slideChange',()=>{
         mid_box_city_con_swiper.slideNext()
+        mid_box_city_text_swiper.slideNext()
       })
     </script>
 
-    <!-- <script>
-      anime({
-        targets: '.mid_box_city',
-        opacity: [0,1],
-        translateX: [-80,0],
-        duration: 2500,
-      });
-    </script>     -->
 
-    <!-- <script>
-      anime({
-        targets: '.mid_box_city_image_swiper',
-        opacity: [0,1],
-        translateX: [-80,0],
-        duration: 2500,
-      });
-      anime({
-        targets: '.mid_box_city_con_swiper',
-        opacity: [0,1],
-        translateY: [-80,0],
-        duration: 2500,
-      });
-    </script> -->
-
-
-    <style>
-      
-    </style>
-
-    <!-- <script>
-      const city_box = document.querySelectorAll('.city_box')
-
-      const shuffleImages =()=>{
-        let images = ['images/kumasi.jpg', 'images/accra.jpg', 'images/accra2.jpg', 'images/accra3.jpg', 'images/accra4.jpg','images/accra5.jpeg'];
-        
-        for (let i = images.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [images[i], images[j]] = [images[j], images[i]];
-        }
-        
-        city_box.forEach((city,i)=>{
-          city.style.backgroundImage = `url('${images[i]}')`
-          anime({
-            targets: city,
-            opacity: [0,1],
-            delay : 200 * i,
-            duration: 200,
-            easing: 'spring(1, 80, 10, 0)',
-          });
-        })
-      }
-
-      const mid_box_city = document.querySelector('.mid_box_city')
-      // mid_box_city.onmouseleave =()=>{
-      //   shuffleInterval()
-      // }
-
-      function shuffleInterval(){
-        const shuff = 
-        setInterval(()=>{
-          shuffleImages()
-          mid_box_city.onmouseenter =()=>{
-            clearInterval(shuff)
-          }
-        },8000)
-      }shuffleInterval()
-      
-
-      const mbo_options = {
-        rootMargin: '100px'
-      };
-      const midBoxObserver = new IntersectionObserver((entries,observer)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            if(!sessionStorage.getItem('animeCityBox')){
-              animeCityBox()
-              sessionStorage.setItem('animeCityBox',1)
-            }
-          }
-        })
-      },mbo_options)
-      midBoxObserver.observe(mid_box_city)
-      
-      const animeCityBox =()=>{
-        for (let i = 0; i < city_box.length; i++) {
-          anime({
-            targets: city_box[i],
-            translateX: [-80,0],
-            // opacity: [0,1],
-            zIndex: [-1,1],
-            delay : 200 * i,
-            duration: 1000,
-            easing: 'steps(5)',
-          });
-        }
-      }
-      
-    </script> -->
-    <style>
-      /* .city_box{
-        border-radius: 20% 0 20% 0;
-      } */
-    </style>
     <section class="intro_box">
       <section class="intro_box_left" >
         <div class="intro_box_left_box">
@@ -432,26 +410,7 @@
   }
     </script> 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- <script>
-      var intro_box_right_swiper = new Swiper(".intro_box_right_swiper", {
-      loop:true,
-      direction:'vertical',
-      autoplay:{
-        delay:9000
-      },
-      speed: 1500,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-    intro_box_right_swiper.el.onmouseenter =()=>{
-      intro_box_right_swiper.autoplay.stop()
-    }
-    </script> -->
-
     
-
     <section class="hostel_swiper_box">
       <div class="hostel_swiper_con">
         <div class="info info_swiper swiper" id="con_info">
@@ -513,16 +472,13 @@
         .hostel_swiper_con .info .swiper-slide strong, .ins_span{
           text-align: center;
           font-size: 1.6rem;
-          /* font-family: 'DessauProDrei'; */
           font-weight: 600;
         }
         .hostel_swiper_con .info .swiper-slide p{
           word-spacing: 3px;
           padding-bottom: 1rem;
           border-bottom: 2px dotted #fdcf6d;
-          /* border: 1px solid wheat; */
           width: 90%;
-          /* padding: 0 5%; */
           font-size: 1.2rem;
         }
       </style>
@@ -609,84 +565,11 @@
             <input type="text" placeholder="email">
           </div>
         </section>
-
-        <script>
-          
-          // footer_mid section div
-
-          const footer = document.querySelector('.footer')
-          const footerObserverOptions ={
-            rootMargin : '-100px'
-          }
-          const footerObserver = new IntersectionObserver((entries,observer)=>{
-            entries.forEach(entry=>{
-              if(entry.isIntersecting){
-                if(!sessionStorage.getItem('buildfp_bigAnimation')){
-                  if(window.innerWidth > 710){
-                    buildfp_bigAnimation()
-                    buildFooter_aAnimation()
-                  }
-                  sessionStorage.setItem('buildfp_bigAnimation',1)
-                }
-              }
-            })
-          },footerObserverOptions)
-
-          footerObserver.observe(footer)
-        </script>
-  
-        <script>
-          const fp_big = document.querySelectorAll('[id=fp_big]')
-          
-          buildfp_bigAnimation =()=>{
-            fp_big.forEach(fp=>{
-              fp.innerHTML = 
-              fp.innerHTML.split('').map((span)=>{
-                if(span === ' '){
-                  span = '&nbsp '
-                }
-                return `<span class='fp_span'>${span}</span>`
-              }).join('')
-              
-              const fp_span = document.querySelectorAll('.fp_span')
-              fp_span.forEach((fps,fi)=>{
-                anime({
-                  targets: fps,
-                  translateX: [30,0],
-                  opacity: [0,1],
-                  delay : 10 * fi,
-                  easing: 'easeInOutQuad',
-                  duration: 300,
-                });
-              })
-            })
-          }
-
-          const buildFooter_aAnimation = ()=>{
-            let footer_a = document.querySelectorAll('.footer_mid section div a')
-            
-            footer_a.forEach((a,ai)=>{
-              anime({
-                targets: a,
-                translateY: [100,0],
-                opacity: [0,1],
-                delay : 70 * ai,
-                easing: 'easeInOutQuad',
-                duration: 500,
-                begin:()=>{
-                  document.querySelector('.footer').style.overflow = 'hidden'
-                },
-              });
-            })
-          }
-
-  
-        </script>
         <hr>
         <section class="footer_mid">
           <section>
             <div>
-              <a href="">About Us</a>
+              <a href="about.html">About Us</a>
               <a href="">Teams / Careers</a>
               <a href="">Blogs</a>
               <a href="">Support</a>
@@ -778,9 +661,11 @@
 
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/index.js"></script>
+  <script src="js/footer.js"></script>
   <script src="js/swiper.js"></script>
   <script>
     config = {

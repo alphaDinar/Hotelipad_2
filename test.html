@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="reg_box">
+    <a href="" class="reg">Home</a>
+  </div>
+
+  <script>
+    const div = document.querySelector('div')
+    const a = document.querySelector('a')
+    
+
+    div.onmouseover =()=>{
+      if(event.target.classList.contains('reg_box') || event.target.parentElement.classList.contains('reg_box')){
+        a.classList.add('change')
+      }
+    }
+    div.onmouseleave =()=>{
+      a.classList.remove('change')
+    }
+
+  </script>
+</body>
+</html>
+
+
+<style>
+  div{
+    height: 30px;
+    width: 100px;
+    background: black;
+    position: relative;
+  }
+  div a{
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 100%;
+    padding: 10px;
+    background: salmon;
+  }
+  div a.change{
+    display: flex;
+  }
+</style>
