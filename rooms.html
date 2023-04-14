@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/searchBar.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="page">
+    <form class="search_bar">
+      <img src="images/loog.png" alt="" width="160px" height="60px">
+      <button type="button">
+        Near me <i class="material-symbols-outlined">my_location</i>
+      </button>
+      <div class="input_field">
+        <input type="text" placeholder="City">
+      </div>
+
+      <div class="input_field">
+        <input type="date" placeholder="Duration">
+      </div>
+      <!-- <div>
+        <i class="material-symbols-outlined">timer</i> 
+        1 month, 2 Weeks
+      </div> -->
+
+      <!-- <div class="input_field">
+        <span>Depature Date</span>
+        <input type="date" placeholder="Depature Date">
+      </div> -->
+      <div class="input_field num_box">
+        <span>Number Of Guests</span>
+        <strong id="guest_num">
+          <small id="room_counter">1 Room</small> ,
+          <small id="guest_counter">1 Guest</small>
+        </strong>
+        <div class="room_nav_box">
+          <div>
+            <span>Room</span>
+            <span>Guests</span>
+          </div>
+          <article id="room_items">
+            <div class="room_li">
+              <span>Room 1</span>
+              <section>
+                <small class="add">+</small>
+                <strong class="room_nav_box_in">1</strong>
+                <small class="sub">-</small>
+              </section>
+            </div>
+          </article>
+          <div>
+            <span class="rem_room">Remove</span>
+            <span class="add_room">Add Room</span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="input_field"> -->
+      <button type="submit">
+        <small>Run A Search</small>
+        <i class="material-symbols-outlined">youtube_searched_for</i>
+      </button>
+      <!-- </div> -->
+    </form>
+
+    <section class="search_box">
+      <form class="side_nav">
+        <section class="side_nav_part">
+          <p>
+            <strong>Filters</strong>
+            <small>Clear All</small>
+          </p>
+          <small>Popular Locations Near You</small>
+          <input type="text">
+          <div>
+            Tag BOX
+          </div>
+        </section>
+        <hr>
+        <section class="side_nav_part">
+          <small>Accomodation Type</small>
+          <label>
+            <input type="radio" name="acc_type">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Home
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="acc_type">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Hotel
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="acc_type">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Resort
+            </div>
+          </label>
+        </section>
+        <hr>
+
+        <style>
+          label {
+            width: max-content;
+            padding: 3px;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+          }
+
+          label:hover {
+            border-bottom: 1px dotted black;
+          }
+
+          label>input[type='radio'] {
+            display: none;
+          }
+
+          .radBox {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+
+          label>input[type='radio']:checked+.radBox #radTag {
+            background: black;
+            background: #fdcf6d;
+
+          }
+
+          #radTag {
+            background: darkgray;
+            background: #020a31;
+            /* border: 1px solid skyblue; */
+            height: 15px;
+            width: 15px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border-radius: 50%;
+            transition: 0.3s ease;
+          }
+        </style>
+
+        <section class="side_nav_part">
+          <small>Price Range</small>
+        </section>
+        <hr>
+        <section class="side_nav_part">
+          <small>collections</small>
+          <label>
+            <input type="radio" name="collection">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Family Offer
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="collection">
+            <div class="radBox">
+              <div id="radTag"></div>
+              For Group Travellers
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="collection">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Near Airport
+            </div>
+          </label>
+        </section>
+        <section class="side_nav_part">
+          <small>Facilities</small>
+          <label>
+            <input type="radio" name="facility">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Conference Hall
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="facility">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Seating Area
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="facility">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Kitchenette
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="facility">
+            <div class="radBox">
+              <div id="radTag"></div>
+              King Sized Bed
+            </div>
+          </label>
+          <label>
+            <input type="radio" name="facility">
+            <div class="radBox">
+              <div id="radTag"></div>
+              Queen Sized Bed
+            </div>
+          </label>
+
+        </section>
+      </form>
+      <div class="roomList">
+        <img src="images/room1.jpg" alt="" width="350px" height="320px">
+        <img src="images/room2.jpg" alt="" width="350px" height="320px">
+        <img src="images/room3.jpg" alt="" width="350px" height="320px">
+        <img src="images/room4.jpg" alt="" width="350px" height="320px">
+        <img src="images/room5.jpg" alt="" width="350px" height="320px">
+        <img src="images/room6.jpg" alt="" width="350px" height="320px">
+      </div>
+    </section>
+  </section>
+
+  <style>
+    .roomList{
+      background: white !important;
+      padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .roomList img{
+      border-radius: 10px;
+    }
+  </style>
+</body>
+
+</html>
+
+
+<style>
+  .search_box {
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 90vh;
+  }
+
+  .side_nav {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 19%;
+    padding: 0 2%;    
+    display: flex;
+    height: 100vh;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .side_nav::-webkit-scrollbar{
+    width: 8px;
+    background: whitesmoke;
+    -webkit-animation: appear 0.3s ease;;
+  }
+  .side_nav::-webkit-scrollbar-thumb{
+    background: darkgray;
+    border-radius: 100px;
+  }
+
+  .side_nav hr {
+    width: 100%;
+    border-top: 2px dotted black;
+  }
+
+  .side_nav_part {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .side_nav_part p {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .side_nav_part input {
+    width: 94%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5px 3%;
+    font-size: 1.1rem;
+    height: 30px;
+    border: 1px dotted #020a31;
+  }
+
+  .side_nav strong {
+    font-weight: 400;
+    font-size: 2.3rem;
+  }
+
+  .side_nav small {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .roomList {
+    width: 77%;
+    min-height: 90vh;
+    background: gray;
+  }
+</style>

@@ -1,12 +1,4 @@
 
-:root{
-  --theme: #fdcf6d;
-  /* --theme: #3056d3; */
-  --info-text-color: #302d46;
-  --info-text-color: #020a31;
-  
-  --footer-background:rgb(32, 20, 20);
-}
 .head_nav{
   display: flex;
   width: 90%;
@@ -118,34 +110,58 @@
   align-items: center;
   justify-content: space-between;
   align-items: center;
-  /* width:90%; */
-  /* max-width: 95%; */
-  padding: 10px 10px 10px 30px;
+  padding: 10px 15px 10px 15px;
   background: var(--theme);
   background: white;
-  /* background: red; */
   color: rgb(112, 111, 111);
   border-radius: 10px;
+  
 }
+.head_box_con form img{
+  display: none;
+}
+
+.head_box_con form.change{
+  position: fixed;
+  transition: 0.3s linear;
+  width: 100%;
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0;
+  padding: 10px 0;
+  background: white;
+  background: var(--theme);
+  background: var(--info-text-color);
+  top: 0;
+  left: 0;
+}
+.head_box_con form.change img{
+  display: flex;
+} 
+.head_box_con form.change .input_field{
+  border: none;
+} 
+.head_box_con form.change .input_field span{
+  display: none;
+}
+
 .head_box_con form .input_field{
   display: flex;
   border: 1px solid rgb(212, 212, 212);
   flex-direction: column;
-  /* gap: 1rem; */
+  border-radius: 3px;
 }
 .head_box_con form .input_field span{
   font-size: 0.9rem;
-  padding: 8px 10px;
-  /* display: none; */
+  padding: 0px 10px;
   color:  var(--info-text-color);
 }
 .head_box_con form .input_field input, #guest_num{
-  border-bottom: 1px solid  white;
-  color:  var(--info-text-color);
   color: rgb(114, 114, 114);
   background: transparent;
   font-size: 1rem;
-  /* border: 1px solid black; */
   font-weight: 600;
   padding: 8px 10px;
   background: white;
@@ -153,13 +169,12 @@
 }
 #guest_num{
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: flex-end;
   gap: 0.5rem;
   width: 200px;
 }
 .room_nav_box span{
-  display: flex !important;
+  display: flex;
 }
 .head_box_con form .input_field input::placeholder{
   color: rgb(114, 114, 114);
@@ -233,7 +248,7 @@
   0%{opacity: 0; top: 120%;}
   100%{opacity: 1; top: 110%;}
 }
-.head_box_con form .input_field button{
+.head_box_con form button{
   padding:10px 10px;
   /* border-radius: 50px; */
   display: flex;
@@ -244,9 +259,13 @@
   background:  var(--info-text-color);
   color:  var(--info-text-color);
   color: #fdcf6d;
+  cursor: pointer;
   border-radius: 10px;
 }
-.head_box_con form .input_field button i{
+.head_box_con form.change button{
+  border: 1px solid #fdcf6d;
+}
+.head_box_con form  button i{
   background:  var(--info-text-color);
   padding: 1px;
   border-radius: 3px;
@@ -525,16 +544,23 @@
     right: 20px;
     flex-direction: row;
   }
+  .head_box_con{
+    align-items: center;
+  }
   .head_box_con form{
     align-items: center;
     justify-content: center;
-    padding: 10px 0 10px 0;
+    max-width: 90%;
     gap: 1rem;
-    border-radius: 20px;
+    border-radius: 5px;
   }
   .head_box_con form .input_field button{
     border-radius: 10px;
   }
+.head_box_con p{
+  text-align: center;
+}
+
   .mid_box_con{
     width: 100%;
   }
@@ -663,24 +689,37 @@
   }
   .head_box_con form{
     padding: 10px;
-    gap: 1rem;
-    width: 90%;
-    border-radius: 10px;
+    gap: 0.5rem;
+    width: 85%;
+    border-radius: 5px;
+  }
+  
+  .head_box_con form button{
+    padding:10px 10px;
+    border-radius: 0;
+    border-radius: 5px;
+    padding: 5px;
   }
   /* .head_box_con form */
   .head_box .input_field{
+    align-items: center;
     min-width: 90%;
     max-width: 90%;
   }
   #guest_num{
+    text-align: center;
     padding: 10px 0;
+    justify-content: center;
     width: 100%;
   }
   .head_box_con form .input_field input{
-    padding: 10px 0;
+    padding: 5px 0;
     width: 100%;
     text-align: center;
   }
+  /* .head_box_con form .input_field input, #guest_num{
+    padding: 0 ;
+  } */
   .head_box_con p{
     font-size: 6vw;
     text-align: center;
@@ -703,4 +742,12 @@
   .hs2{
     display: none;
   }
+}
+
+
+.intro_box{
+  z-index: 1;
+}
+.swiper{
+  z-index: 1;
 }

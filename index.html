@@ -61,10 +61,11 @@
         <div class="swiper_cover"></div>
       </div>
       <div class="head_box_con">
-        <form>
-          <div>
+        <form action="rooms.html">
+          <img src="images/loog.png" alt="" width="160px" height="60px">
+          <button type="button">
             Near me <i class="material-symbols-outlined">my_location</i> 
-          </div>
+          </button>
           <div class="input_field">
             <span>City</span>
             <input type="text" placeholder="City">
@@ -110,12 +111,12 @@
               </div>
             </div>
           </div>
-          <div class="input_field">
-            <button>
+          <!-- <div class="input_field"> -->
+            <button type="submit">
               <small>Run A Search</small>
               <i class="material-symbols-outlined">youtube_searched_for</i> 
             </button>
-          </div>
+          <!-- </div> -->
         </form>
         <p>
           <span><span>Rediscover   <span id="s1">Serenity;</span>  </span></span> <span>perfect budget</span>  <span>Hotels and Homes</span> <span id="s1">in Ghana.</span> 
@@ -129,6 +130,7 @@
         <script>
           const mid_box = document.querySelector('.mid_box')
           const mid_p = document.querySelector('.mid_p')
+          
         </script>
 
         <style>
@@ -328,7 +330,9 @@
       </section>
     </section>
     <script>
+      
 
+      
     </script>
     <style>
       .intro_box_p{
@@ -350,14 +354,8 @@
   const intro_box = document.querySelector('.intro_box')
   const intro_box_p = document.querySelectorAll('.intro_box_p')
   const intro_box_left_box = document.querySelectorAll('.intro_box_left_box')
-  // window.onload =()=>{
-    sessionStorage.clear()
-    console.log('me')
-  // }
 
-  const ibo_options = {
-    // rootMargin:'-100px'
-  };
+  const ibo_options = {};
   const introBoxObserver = new IntersectionObserver((entries,observer)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
@@ -653,21 +651,20 @@
   <script>
     const hostel_swiper_box = document.querySelector('.hostel_swiper_box')
     const con_info = document.getElementById('con_info')
-    const hsb_options = {
-      threshold: 1
-    };
+    const head_box_form = document.querySelector('.head_box_con form')
 
+    const hsb_options = {};
     const hostelSwiperBoxObserver = new IntersectionObserver((entries,observer)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
-          
+          head_box_form.classList.add('change')
+        }else{
+          head_box_form.classList.remove('change')
         }
       })
     }, hsb_options) 
+    hostelSwiperBoxObserver.observe(hostel_swiper_box)
 
-    // window.onscroll =()=>{
-    //   console.log(hostel_swiper_box.scrollTop)
-    // }
 
   </script>
 

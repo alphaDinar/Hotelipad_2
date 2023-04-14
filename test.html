@@ -7,22 +7,25 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="reg_box">
-    <a href="" class="reg">Home</a>
+  <div class="box_holder">
+    <div class="box">
+      <div class="child" id="child">
+        <div class="handle" id="handle"></div>
+        <div class="handle" id="handle"></div>
+      </div>
+    </div>
   </div>
 
   <script>
-    const div = document.querySelector('div')
-    const a = document.querySelector('a')
-    
 
-    div.onmouseover =()=>{
-      if(event.target.classList.contains('reg_box') || event.target.parentElement.classList.contains('reg_box')){
-        a.classList.add('change')
-      }
-    }
-    div.onmouseleave =()=>{
-      a.classList.remove('change')
+    
+    const child = document.getElementById('child')
+    const handle = document.getElementById('handle')
+    console.log(handle)
+
+    handle.onclick =()=>{
+      child.style.width = '10%'
+      console.log(event.clientX)
     }
 
   </script>
@@ -31,21 +34,41 @@
 
 
 <style>
-  div{
-    height: 30px;
-    width: 100px;
-    background: black;
-    position: relative;
-  }
-  div a{
-    position: absolute;
-    display: none;
+  body{
     width: 100%;
-    top: 100%;
-    padding: 10px;
-    background: salmon;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  div a.change{
+  .box_holder{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+  }
+  .box{
+    width: 300px;
+    height: 5px;
+    border-radius: 100px;
+    background: rgb(207, 207, 207);
     display: flex;
   }
+  .box .child{
+    width: 200px;
+    height: 100%;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    transition: 0.3s linear;
+  }
+  .box .child .handle{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background: salmon;
+  }
+  
 </style>
