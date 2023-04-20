@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/searchBar.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/room_book.css">
   <title>HoteliPad - Room Booking</title>
 </head>
 <body>
@@ -47,95 +48,14 @@
                 <button>Send Passcode</button>
               </div>
             </div>
-
             <label>
               <input type="checkbox">
               <small style="font-size: 0.9rem;">
                 I would like to receive information about your services and any special offers by email, telephone, post or text message
               </small>
             </label>
-
-            <style>
-              label{
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                cursor: pointer;
-              }
-            </style>
           </form>
         </div>
-        <style>
-          .book_box_con{
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            /* gap:; */
-          }
-          .book_box_con_left{
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            width: 500px;
-            padding: 15px;
-          }
-          .book_box_con_left .notify{
-            background: #fdcf6d;
-            padding: 10px;
-            font-size: 1.2rem;
-            color: aliceblue;
-            color: #020a31;
-            text-align: center;
-          }
-          .book_box_con_left form{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-          }
-          .book_box_con_left form .user_info_box{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-          }
-          .book_box_con_left form .user_info_box .user_info{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 1rem;
-            flex-wrap: wrap;
-          }
-          .book_box_con_left form .user_info_box .user_info .input_field{
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            width: 230px;
-          }
-          .book_box_con_left form .user_info_box .user_info .input_field input{
-            border: 1px solid darkgray;
-            height: 20px;
-            padding: 10px;
-            
-          }
-          .book_box_con_left form .user_info_box .user_info button{
-            width: 230px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 0;
-            height: 30px;
-            border-radius: 3px;
-            background: #1ab64f;
-            font-size: 1.1rem;
-            color: white;
-          }
-          .book_box_con_left form p{
-            background: whitesmoke;
-            font-weight: 400;
-            font-size: 1.1rem;
-            padding: 10px;
-          }
-        </style>
-
 
         <div class="book_box_con_right">
           <div class="book_box_con_right_header">
@@ -145,46 +65,9 @@
             </div>
             <img src="images/room3.jpg" alt="" width="90px" height="60px" style="border-radius: 2px;">
           </div>
-          <style>
-            .book_box_con_right{
-              display: flex;
-              flex-direction: column;
-              gap: 1rem;
-              border-radius: 5px;
-              box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-              width: 400px;
-              padding: 15px;
-            }
-            .book_box_con_right_header{
-              display: flex;
-              justify-content: space-between;
-            }
-            .book_box_con_right_header div{
-              display: flex;
-              flex-direction: column;
-            }
-            .book_box_con_right_header div strong{
-              font-weight: 400;
-              font-size: 1.5rem;
-            }
-          </style>
           <div class="book_box_ratings">
             <div> <span>4.5 <i class="material-symbols-outlined" style="font-size: 1rem;">star</i></span> <small>(2245 Ratings)</small>  .Excellent </div>
             <span style="color: rgb(120, 120, 120);">1 night</span>
-
-            <style>
-              .book_box_ratings div{
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-              }
-              .book_box_ratings div span{
-                padding: 3px;
-                border-radius: 2px;
-                background: #1ab64f; color: white; display: flex; align-items: center; font-size: 1rem;
-              }
-              
-            </style>
           </div>
           <div class="book_box_guests">
             <div>
@@ -192,35 +75,8 @@
               <span><i class="material-symbols-outlined">wc</i> 3 guests, 2 rooms</span>
               <span><i class="material-symbols-outlined">bed</i> Deluxe with balcony</span>
             </div>
-            <style>
-              .book_box_guests,.book_box_ratings,.book_box_pay{
-                display: flex;
-                gap: 0.3rem;
-                flex-direction: column;
-              }
-              .book_box_guests div{
-                display: flex;
-                flex-direction: column;
-              }
-              .book_box_guests div span{
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                font-size: 0.9rem;
-              }
-              .book_box_guests div span i{
-                font-weight: 200;
-                color: salmon;
-              }
-            </style>
           </div>
           <hr>
-          <style>
-            .book_box_con_right hr{
-              width: 100%;
-              border-top: 2px dotted darkgray;
-            }
-          </style>
           <div class="book_box_pay">
             <div>
               <span>Room price for 1 Night X 2 Guests</span>
@@ -230,17 +86,6 @@
               <span>Instant discount</span>
               <small>Ghc 2,500</small>
             </div>
-            <style>
-              .book_box_pay div{
-                display: flex;
-                justify-content: space-between;
-              }
-              .book_box_pay small{
-                color: #1ab64f;
-                color: #020a31;
-                font-size: 1.1rem;
-              }
-            </style>
           </div>
           <hr>
           <div class="book_box_outro">
@@ -249,114 +94,13 @@
               <small style="color: darkgray;">inclusive of all taxes</small>
             </p>
             <span style="font-size: 1.1rem;">Ghc 7,500</span>
-            <style>
-              .book_box_outro{
-                display: flex;
-                justify-content: space-between;
-                /* border: 1px solid black; */
-              }
-              .book_box_outro p{
-                display: flex;
-                flex-direction: column;
-              }
-            </style>
           </div>
           <div class="book_box_status">
             <i class="material-symbols-outlined" style="font-size: 1rem;">bolt</i> 10 people booked this hotel in last 6 hours
           </div>
-          <style>
-            .book_box_status{
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              justify-content: center;
-              padding: 10px 0;
-              border-radius: 3px;
-              background: #FDE8E4;
-              color: salmon;
-              font-weight: 600;
-            }
-          </style>
         </div>
       </div>
-
-      
-
     </section>
-    <style>
-      .page{
-        height: 100vh;
-      }
-      .book_box{
-        width: 98%;
-        padding: 1rem 1%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap-reverse;
-      }
-      .book_box_header,.book_box_con{
-        width: 65%;
-      }
-      .book_box_header{
-        display: flex;
-        color: #020a31;
-        align-items: center;
-      }
-      @media all and (max-width:1300px){
-        .book_box{
-          margin: 0;
-          gap: 1rem;
-        }
-        .book_box_header,.book_box_con{
-          /* border: 1px solid black; */
-          width: 80%;
-
-        }
-        .page{
-          height: auto;
-        }
-        .book_box_con_right{
-          width: 500px;
-        }
-      }
-      @media all and (max-width:1000px){
-        .book_box{
-          align-items: center;
-        }
-        .book_box_header{
-          width: auto;
-        }
-        .book_box_con{
-          width: auto;
-          gap: 1rem;
-          flex-direction: column-reverse;
-        }
-        .book_box_con_right,.book_box_con_left{
-          min-width: 500px;
-        }
-      }
-      @media all and (max-width:600px){
-        .book_box_con{
-          width: 100%;
-          padding: 0;
-          align-items: center;
-        }
-        .book_box_con_right,.book_box_con_left{
-          min-width: auto;
-          width: 85%;
-        }
-        .book_box_con_left{
-          text-align: center;
-          align-items: center;
-        }
-        .book_box_con_left form .user_info_box .user_info{
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    </style>
-
   </section>
 </body>
 </html>

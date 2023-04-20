@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/searchBar.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/room_info.css">
   <title>HoteliPad - Room Details</title>
 </head>
 
@@ -86,52 +87,6 @@
         <div class="head_box_swiper_next material-symbols-outlined">arrow_forward_ios</div>
       </div>
     </section>
-    <style>
-      .head_box{
-        margin-top: 10vh;
-        width: 95%;
-      }
-      .head_box_swiper {
-        display: flex;
-        align-items: center;
-        height: 400px;
-        width: 100%;
-      }
-      .head_box_swiper .swiper-slide{
-        background-position: center;
-        background-size: cover;
-      }
-      .head_box_swiper_prev,.head_box_swiper_next{
-        height: 50px;
-        width: 50px;
-        z-index: 10;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.4rem;
-        position: absolute;
-      }
-      .head_box_swiper_prev{
-        left: 0;
-      }
-      .head_box_swiper_next{
-        right: 0;
-      }
-
-      @media all and (max-width:1300px){
-        .head_box{
-          margin: 0;
-        }
-      }
-      @media all and (max-width:1000px){
-        .head_box_swiper{
-          height: 300px;
-        }
-      }
-    </style>
-
 
     <section class="room_box">
       <div class="room_box_left">
@@ -139,39 +94,10 @@
           <strong>Ridge Condos</strong>
           <small>Ahodwo Rd 123, str</small>
         </div>
-        <style>
-          .room_box_header,.room_box_ratings, .room_box_amenities, .room_box_policy{
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-          }
-          .room_box_header strong{
-            font-size: 2rem;
-            font-weight: 400;
-          }
-          .room_box_header small{
-            color: darkgray;
-            font-size: 1.1rem;
-          }
-        </style>
         <div class="room_box_ratings">
           <span style="background: #1ab64f; color: white;">4.5 <i class="material-symbols-outlined">star</i> Excellent</span>
           <span style="background: #fdcf6d; color: white;">Guest Age should be 21 +</span>
         </div>
-        <style>
-          .room_box_ratings{
-            align-items:flex-start;
-          }
-          .room_box_ratings span{
-            padding: 5px;
-            width: auto;
-            display: flex;
-            align-items: center;
-            border-radius: 2px;
-            /* justify-content: center; */
-            gap: 0.2rem;
-          }
-        </style>
         <div class="room_box_description">
           <strong>Description</strong>
           <p>
@@ -179,18 +105,6 @@
           </p>
           <button>Read More...</button>
         </div>
-        <style>
-          .room_box_description strong,.room_box_amenities strong, .room_box_policy strong{
-            font-weight: 400;
-            font-size: 1.4rem;
-          }
-          .room_box_description button,.room_box_amenities button{
-            background: transparent; color: salmon; cursor: pointer; font-weight: 600;
-            display: flex;
-            justify-content: flex-start;
-          }
-          
-        </style>
         <div class="room_box_amenities">
           <strong>Amenities</strong>
           <div class="amenities">
@@ -203,62 +117,16 @@
             <button>Read More...</button>
           </div>
         </div>
-        <style>
-          .room_box_amenities i{
-            color: skyblue;
-          }
-          .room_box_amenities .amenities{
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: 1fr 1fr 1fr;
-          }
-          .room_box_amenities span{
-            gap: 0.5rem;
-            display: flex;
-            align-items: center;
-          }
-        </style>
         <div class="room_box_policy">
           <strong>Hotel Policies</strong>
           <div>
             <small><span>check-in</span> <span style="font-size: 0.9rem; color: rgb(114, 114, 114);">12:00 PM</span> </small> 
             <small><span>check-out</span> <span style="font-size: 0.9rem; color: rgb(112, 112, 112);">10:00 AM</span> </small> 
           </div>
-
-          <style>
-            .room_box_policy{
-              width: 100%;
-            }
-            .room_box_policy div{
-              display: flex;
-              gap: 0.5rem;
-            }
-            .room_box_policy div small{
-              font-size: 1rem;
-              display: flex;
-              flex-direction: column;
-              padding: 3px 10px;
-              border-radius: 2px;
-              box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-            }
-          </style>
           <nav class="room_box_policy_nav">
             <a href="">View Guest Policy</a>
             <a href=""><i class="material-symbols-outlined">search</i> Find Hotels without these rules</a>
           </nav>
-          <style>
-            .room_box_policy_nav{
-              width: 100%;
-              display: flex;
-              justify-content: space-between;
-            }
-            .room_box_policy_nav a{
-              padding: 5px;
-              color: palevioletred;
-              color: salmon;
-              font-weight: 600;
-            }
-          </style>
           <div class="room_box_nearby">
 
           </div>
@@ -278,13 +146,6 @@
           <span>23rd March,2021 to 28th March,2023</span>
           <span>3 Guests, 2 Rooms</span>
         </div>
-        <style>
-          .room_box_pricing,.room_box_guest,.room_box_invoice{
-            display: flex;
-            gap: 0.2rem;
-            flex-direction: column;
-          }
-        </style>
         <hr>
         <div class="room_box_invoice">
           <p>
@@ -297,77 +158,8 @@
         <a href="room_book.html">
           Continue to Book
         </a>
-        <style>
-          .room_box_invoice p{
-            justify-content: space-between;
-            display: flex;
-          }
-          .room_box_right a{
-            background: #1ab64f;
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 3px;
-            color: white;
-          }
-
-
-        </style>
-        
       </div>
     </section>
-
-    <style>
-      .room_box{
-        width: 85%;
-        display: flex;
-        padding: 15px 1%;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-      .room_box_left{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 64%;
-        gap: 1.5rem;
-        padding: 1rem 1.5%;
-      }
-      .room_box_right{
-        width: 28%;
-        gap: 1.5rem;
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 1.5%;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      }
-      .room_box_right hr{
-        width: 100%;
-        border-top: 2px dotted rgb(87, 87, 87);
-      }
-
-      @media all and (max-width:1000px){
-        .room_box{
-          flex-direction: column;
-          gap: 2rem;
-        }
-        .room_box_left,.room_box_right{
-          width: 100%;
-        }
-      }
-      @media all and (max-width:500px){
-        .room_box{
-          width: 90%;
-          align-items: center;
-          padding: 1rem 2.5%;
-        }
-        .room_box_amenities .amenities{
-          gap: 0.5rem;
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    </style>
-
     <section class="footer">
       <section class="footer_cover">
         <section class="footer_top">
@@ -442,7 +234,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-
     window.onload =()=>{
       var wide = window.innerWidth
       makeHeadBoxSwiper(wide)
@@ -471,7 +262,6 @@
         },
       });
     }
-    
   </script>
 </body>
 
