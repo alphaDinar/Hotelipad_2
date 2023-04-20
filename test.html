@@ -6,26 +6,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <div class="box_holder">
-    <div class="box">
-      <div class="child" id="child">
-        <div class="handle" id="handle"></div>
-        <div class="handle" id="handle"></div>
-      </div>
+<body style="flex-direction: column;">
+  <div class="slider">
+    <div class="progress">
+      
+    </div>
+    <div class="range_box">
+      <input type="range" id="handle_start" class="handle" min="0" max="10000" value="2500">
+      <input type="range" id="handle_end" class="handle" min="0" max="10000" value="7500">
     </div>
   </div>
+
+  <style>
+    .slider{
+      width: 400px;
+      height: 10px;
+      border-radius: 10px;
+      background: salmon;
+      position: relative;
+    }
+    .progress{
+      height: 100%;
+      left: 25%;
+      right: 25%;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      background: skyblue;
+      position: absolute;
+    }
+    .range_box{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      /* background: red; */
+      position: relative;
+    }
+    .range_box > input{
+      position: absolute;
+      pointer-events: none;
+      background: none;
+      -webkit-appearance: none;
+      width: 100%;
+    }
+    .range_box > input::-webkit-slider-thumb {
+      pointer-events: all;
+      -webkit-appearance: none;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background: black;
+      cursor: pointer;
+    }
+    .range_box > input::-moz-range-thumb{
+      pointer-events: all;
+      -webkit-appearance: none;
+      height: 15px;
+      width: 15px;
+      background: black;
+    }
+    
+  </style>
+
+
+  <span></span>
 
   <script>
 
     
-    const child = document.getElementById('child')
-    const handle = document.getElementById('handle')
-    console.log(handle)
+    const handle_start = document.getElementById('handle_start')
+    const handle_end = document.getElementById('handle_end')
+    const progress = document.querySelector('.progress')
+    const num_box = document.querySelector('span')
 
-    handle.onclick =()=>{
-      child.style.width = '10%'
-      console.log(event.clientX)
+    var gap = 500
+    handle_start.oninput =()=>{
+      var diff = handle_end.value - handle_start.value
+      if(diff < gap){
+        handle_start.value = parseInt(handle_end.value) - gap
+      }
+      progress.style.left = `${(handle_start.value * 100) / handle_start.max}%`
+      num_box.innerHTML = `${handle_start.value} <-> ${handle_end.value}`
+    }
+    handle_end.oninput =()=>{
+      var diff = handle_end.value - handle_start.value
+      if(diff < gap){
+        handle_end.value = parseInt(handle_start.value) + gap
+      }
+      progress.style.right = `${100 - (handle_end.value * 100) / handle_end.max}%`
+      num_box.innerHTML = `${handle_start.value} <-> ${handle_end.value}`
     }
 
   </script>
@@ -41,34 +111,4 @@
     justify-content: center;
     align-items: center;
   }
-  .box_holder{
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
-  }
-  .box{
-    width: 300px;
-    height: 5px;
-    border-radius: 100px;
-    background: rgb(207, 207, 207);
-    display: flex;
-  }
-  .box .child{
-    width: 200px;
-    height: 100%;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: black;
-    transition: 0.3s linear;
-  }
-  .box .child .handle{
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background: salmon;
-  }
-  
 </style>

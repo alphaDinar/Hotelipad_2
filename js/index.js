@@ -24,6 +24,7 @@ add_room.onclick =()=>{
 rem_room.onclick =()=>{
   let list = document.querySelectorAll('.room_li')
   var counter = list.length
+  console.log(list.length)
   if(counter > 1){
     list[counter-1].remove()
   }
@@ -38,7 +39,9 @@ const updateNumBox =()=>{
   let list = document.querySelectorAll('.room_li')
   var counter = list.length
   if(counter > 1){
-    room_counter.innerHTML = counter + '  ' + 'Rooms'
+    room_counter.innerHTML = counter + ' ' + 'rooms'
+  }else{
+    room_counter.innerHTML = counter + ' ' + 'room'
   }
   let room_nav_box_in = document.querySelectorAll('.room_nav_box_in')
   var guest_count = 0
@@ -46,7 +49,9 @@ const updateNumBox =()=>{
     guest_count = guest_count + parseInt(room.innerHTML)
   })
   if(guest_count > 1){
-    guest_counter.innerHTML = guest_count + '  ' + 'Guests'
+    guest_counter.innerHTML = guest_count + ' ' + 'guests'
+  }else{
+    guest_counter.innerHTML = guest_count + ' ' + 'guest'
   }
 }
 

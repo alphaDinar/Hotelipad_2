@@ -28,7 +28,7 @@
             <span>Start earning in 30 mins</span>
           </small>
         </a>
-        <a href="" >
+        <!-- <a href="" >
           <i class="material-symbols-outlined">card_membership</i>
           <small>
             <strong>Become A Member</strong>
@@ -41,12 +41,12 @@
             <strong>Hotelipad For Business</strong>
             <span>Coperate Booking solution</span>
           </small>
-        </a>
+        </a> -->
       </p>
       <article>
-        <a href="">Login</a>
+        <a href="login.html">Login</a>
         <hr>
-        <a href="">Register</a>
+        <a href="register.html">Register</a>
       </article>
       <button class="material-symbols-outlined" id="head_nav_tag">menu</button>
     </nav>
@@ -84,12 +84,25 @@
             <span>Depature Date</span>
             <input type="date" placeholder="Depature Date">
           </div> -->
-          <div class="input_field num_box">
+          <div class="input_field num_box"  style="cursor: pointer;">
             <span>Number Of Guests</span>
             <strong id="guest_num">
-              <small id="room_counter">1 Room</small>  ,
+              <small id="room_counter">1 Room</small>
               <small id="guest_counter">1 Guest</small> 
             </strong>
+            <style>
+              #guest_num input[type='number']{
+                border: 1px solid black;
+                /* height: 15px; */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 0 !important;
+                width: 20px;
+                color: black !important;
+              }
+            </style>
             <div class="room_nav_box">
               <div>
                 <span>Room</span>
@@ -127,36 +140,24 @@
       <section class="mid_box_con" >
         
         <img id="mbci" src="ghana_map.png" alt="">
-        <script>
-          const mid_box = document.querySelector('.mid_box')
-          const mid_p = document.querySelector('.mid_p')
-          
-        </script>
-
-        <style>
-          .mid_box_con{
-            position: relative;
-          }
-          
-        </style>
-
+       
         <div class="mid_box_city">
           <div class="mid_box_city_swiper_box">
             <div class="mid_box_city_con_swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <p class="mid_p" style="background: skyblue;">
-                    Best
+                  <p class="mid_p" style="background:#6a9de2;color: white;">
+                    Welcome
                   </p>
                 </div>
-                <div class="swiper-slide" style="background: #fdcf6d;">
+                <div class="swiper-slide" style="background: #fdcf6d; color: white;">
                   <p class="mid_p">
                     Serenity
                   </p>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" style="background: #e3a260; color: white;">
                   <p class="mid_p">
-                    Serenity
+                    Ghana's Leading
                   </p>
                 </div>
               </div>
@@ -164,26 +165,26 @@
             <div class="mid_box_city_image_swiper swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="images/vector-3d-isometric-illustration-interior-hotel-lobby-with-reception_1441-251.jpg" alt="">
+                  <img src="images/three-star-hotel-4454016-3692797.webp" alt="">
                 </div>
                 <div class="swiper-slide">
                   <img src="images/summer.png" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="images/book2.avif" alt="">
+                  <img src="images/hotel-3485078-2914596.webp" alt="">
                 </div>
               </div>
             </div>
             <div class="mid_box_city_text_swiper swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <p>Ghana's Leading Home and Hostel management platform</p>
+                <div class="swiper-slide" style="background:#6a9de2;color: white;">
+                  <p>To our luxurious hotels</p>
                 </div>
-                <div class="swiper-slide">
-                  <p>CSCCSCSCS</p>
+                <div class="swiper-slide" style="background: #fdcf6d; color: white;">
+                  <p>Whether you're here for business or pleasure</p>
                 </div>
-                <div class="swiper-slide">
-                  <p>CCSSCCSSC</p>
+                <div class="swiper-slide" style="background: #e3a260; color: white;">
+                  <p>Home and Hostel management platform</p>
                 </div>
               </div>
             </div>
@@ -191,95 +192,6 @@
         </div>
       </section>
     </section>
-
-    <!-- <style>
-      .mid_p{
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-      .mid_box_city_con_swiper{
-        background: skyblue;
-        color: white;
-      }
-    </style> -->
-
-    <style>
-      .mid_box_city_image_swiper .swiper-slide, .mid_box_city_con_swiper .swiper-slide{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .mid_box_city_image_swiper{
-        width: 300px;
-      }
-      /* .mid_box_city_image_swiper .swiper-slide{
-        flex-direction: column;
-      } */
-      .mid_box_city_image_swiper img{
-        width: 290px;
-        height: 250px;
-      }
-      .mid_box_city_image_swiper p{
-        width: 90%;
-        padding: 0 5%;
-        text-align: center;
-        font-size: 1rem;
-      }
-      .mid_box_city_con_swiper{
-        z-index: 10;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        transition: 0.5s ease linear;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      }
-      .mid_box_city_text_swiper{
-        width: 60%;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      }
-      .mid_box_city_text_swiper .swiper-slide{
-        display: flex;
-        height: 8vh;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-    </style>
-
-
-    <script>
-      var mid_box_city_image_swiper = new Swiper(".mid_box_city_image_swiper", {
-        // direction: 'vertical',
-        loop:true,
-        speed: 1500,
-        autoplay:{
-          delay:3000,
-          // reverseDirection: true,
-        },
-      });
-      var mid_box_city_con_swiper = new Swiper(".mid_box_city_con_swiper", {
-        direction:'vertical',
-        loop:true,
-        speed: 1500,
-      });
-      var mid_box_city_text_swiper = new Swiper(".mid_box_city_text_swiper", {
-        // direction: 'vertical',
-        loop:true,
-        speed: 1500,
-        autoplay:{
-          delay:3000,
-          reverseDirection: true,
-        },
-      });
-      mid_box_city_image_swiper.on('slideChange',()=>{
-        mid_box_city_con_swiper.slideNext()
-        mid_box_city_text_swiper.slideNext()
-      })
-    </script>
-
-
     <section class="intro_box">
       <section class="intro_box_left" >
         <div class="intro_box_left_box">
@@ -294,8 +206,8 @@
         </div>
         <div class="intro_box_left_box">
           <i class="material-symbols-outlined">finance_chip</i>
-          <strong>Competitive Prices</strong>
-          <p class="intro_box_p">We offer competitive prices for hotels, so customers can be sure they're getting a great deal</p>
+          <strong>Loyalty program</strong>
+          <p class="intro_box_p">We reward our loyal customers with exclusive perks, such as free nights and room upgrades</p>
         </div>
       </section>
       <section class="intro_box_right">
@@ -306,7 +218,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url(images/room3.jpg);">
@@ -314,7 +226,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url(images/room1.jpg);">
@@ -322,103 +234,13 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
           </div>
         </div>
       </section>
     </section>
-    <script>
-      
-
-      
-    </script>
-    <style>
-      .intro_box_p{
-        transition: 0.3s ease;
-      }
-      .intro_box_p.change{
-        position: relative;
-        animation: appear 0.5s linear;
-      }
-      @keyframes appear{
-        0%{opacity: 0;}
-        100%{opacity: 1;}
-        /* 100%{color: #020a31;} */
-      }
-      
-    </style>
-
-<script>
-  const intro_box = document.querySelector('.intro_box')
-  const intro_box_p = document.querySelectorAll('.intro_box_p')
-  const intro_box_left_box = document.querySelectorAll('.intro_box_left_box')
-
-  const ibo_options = {};
-  const introBoxObserver = new IntersectionObserver((entries,observer)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        if(!sessionStorage.getItem('animeIntroBoxP')){
-          animeIntroBoxP()
-          sessionStorage.setItem('animeIntroBoxP',1)
-        }
-      }
-    })
-  },ibo_options)
-  introBoxObserver.observe(intro_box)
-
-  const animeIntroBoxP =()=>{
-    do_span =(bi)=>{
-      sessionStorage.setItem(`span${bi}`, intro_box_p[bi].innerHTML)
-      intro_box_p[bi].innerHTML = 
-      intro_box_p[bi].innerHTML.split('').map(ibp=>{
-      if(ibp == ' '){
-        ibp = '&nbsp;'
-      }
-      return `<span class='intro_box_p_s'>${ibp}</span>`
-    }).join('')
-
-      document.querySelectorAll('.intro_box_p_s').forEach((s,si)=>{
-        anime({
-          targets: s,
-          translateX: [30,5],
-          opacity: [0,1],
-          delay : 5 * si,
-          easing: 'easeInOutQuad',
-          duration: 300,
-        });
-      })
-    }
-
-    intro_box_left_box.forEach((box,bi)=>{
-      anime({
-        targets: box,
-        translateY: [100,0],
-        opacity: [0,1],
-        delay : 300 * bi,
-        duration: 400,
-        easing: 'easeInOutQuad',
-        begin: do_span(bi),
-      })
-    })
-
-    undo_span =()=>{
-      intro_box_p[0].innerHTML = sessionStorage.getItem(`span${0}`)
-      intro_box_p[1].innerHTML = sessionStorage.getItem(`span${1}`)
-      intro_box_p[2].innerHTML = sessionStorage.getItem(`span${2}`)
-    }
-
-    setTimeout(()=>{
-      intro_box_p.forEach(intro=>{
-        intro.classList.add('change')
-      })
-      undo_span()
-    },1700)
-  }
-    </script> 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    
     <section class="hostel_swiper_box">
       <div class="hostel_swiper_con">
         <div class="info info_swiper swiper" id="con_info">
@@ -441,56 +263,6 @@
           </div>
         </div>
       </div>
-
-      <style>
-        .ins_span{
-          display: inline-block;
-        }
-      </style>
-
-      <style>
-        .hostel_swiper_con{
-          display: flex;
-          justify-content: center;
-          position: relative;
-        }
-        .hostel_swiper_con .info{
-          width: 100%;
-          height: 20vh;
-          transition: 0.5s linear;
-          position: absolute;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #020a31;
-          top: 25%;
-        }
-        .hostel_swiper_con .info .swiper-slide{
-          display: flex;
-          flex-direction: column;
-          gap: 0.3rem;
-          justify-content: center;
-          align-items: center;
-          width: 95%;
-          height: 100%;
-          padding: 0 2.5%;
-          text-align: center;
-        }
-        .hostel_swiper_con .info .swiper-slide strong, .ins_span{
-          text-align: center;
-          font-size: 1.6rem;
-          font-weight: 600;
-        }
-        .hostel_swiper_con .info .swiper-slide p{
-          word-spacing: 3px;
-          padding-bottom: 1rem;
-          border-bottom: 2px dotted #fdcf6d;
-          width: 90%;
-          font-size: 1.2rem;
-        }
-      </style>
-
       <section class="hostel_swiper_holder">
         <div class="hostel_swiper hs1 swiper ">
           <div class="swiper-wrapper">
@@ -499,7 +271,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url(images/room8.jpg);">
@@ -507,7 +279,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
           </div>
@@ -519,7 +291,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url(images/room3.jpg);">
@@ -527,7 +299,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
           </div>
@@ -539,7 +311,7 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
             <div class="swiper-slide" style="background-image: url(images/room10.avif);">
@@ -547,22 +319,20 @@
                 <strong>New Palace</strong>
                 <span>Ahodwo</span>
                 <span>Ghc 45,00 - per night</span>
-                <a href="">-></a>
+                <a href="rooms.html">-></a>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
     </section>
-
     <section class="footer">
       <section class="footer_cover">
         <section class="footer_top">
           <img src="images/loog.png" alt="" width="160px" height="60px">
           <p>
             <span id="fp_big">Join our network and grow your business!</span> 
-            <a href=""> <i class="material-symbols-outlined">real_estate_agent</i>  List Your Property</a>
+            <a href="partner.html"> <i class="material-symbols-outlined">real_estate_agent</i>  List Your Property</a>
           </p>
         </section>
         <hr>
@@ -578,26 +348,21 @@
           <section>
             <div>
               <a href="about.html">About Us</a>
-              <a href="">Teams / Careers</a>
-              <a href="">Blogs</a>
-              <a href="">Support</a>
+              <a href="support.html">Support</a>
             </div>
             <div id="low_span_vanish">
-              <a href="">Official Hotelipad Blog</a>
-              <a href="">Investor Relations</a>
+              <a href="blog.html">Official Hotelipad Blog</a>
+              <a href="terms_and_conditions.html">Terms and conditions</a>
             </div>
           </section>
           <section>
             <div>
-              <a href="" target="_blank">Terms and conditions</a>
-              <a href="">Guest Policies</a>
-              <a href="">Privacy Policy</a>
-              <a href="">Trust And Safety</a>
+              <a href="guest_policy.html">Guest Policies</a>
+              <a href="privacy_policy.html">Privacy Policy</a>
             </div>
             <div id="low_span_vanish">
-              <a href="">Cyber Security</a>
-              <a href="">Cyber Security Awareness</a>
-              <a href="">Responsible Disclosure</a>
+              <a href="safety.html">Trust And Safety</a>
+              <a href="disclosure.html">Responsible Disclosure</a>
             </div>
           </section>
         </section>
@@ -605,48 +370,48 @@
         <section class="footer_mid">
           <section>
             <div>
-              <a href="">Hotels in Ahodwo</a>
-              <a href="">Hotels in Accra</a>
-              <a href="">Hotels in East Legon</a>
-              <a href="">Hotels in Asokwa</a>
+              <a href="rooms.html">Hotels in Tema</a>
+              <a href="rooms.html">Hotels in Sunyani</a>
             </div>
             <div id="low_span_vanish">
-              <a href="">Hotels in Ahodwo</a>
-              <a href="">Hotels in Accra</a>
-              <a href="">Hotels in East Legon</a>
-              <a href="">Hotels in Asokwa</a>
+              <a href="rooms.html">Hotels in Spintex</a>
+              <a href="rooms.html">Hotels in Achimota</a>
             </div>
             <div id="low_span_vanish">
-              <a href="">Hotels in Ahodwo</a>
-              <a href="">Hotels in Accra</a>
-              <a href="">Hotels in East Legon</a>
-              <a href="">Hotels in Asokwa</a>
+              <a href="rooms.html">Hotels in Takoradi</a>
+              <a href="rooms.html">Hotels in Kwahu</a>
             </div>
           </section>
           <section id="low_span_vanish">
             <div>
-              <a href="">Hotels in Ahodwo</a>
-              <a href="">Hotels in Accra</a>
-              <a href="">Hotels in East Legon</a>
-              <a href="">Hotels in Asokwa</a>
+              <a href="rooms.html">Hotels in Ahodwo</a>
+              <a href="rooms.html">Hotels in Accra</a>
             </div>
             <div>
-              <a href="">Hotels in Ahodwo</a>
-              <a href="">Hotels in Accra</a>
-              <a href="">Hotels in East Legon</a>
-              <a href="">Hotels in Asokwa</a>
+              <a href="rooms.html">Hotels in East Legon</a>
+              <a href="rooms.html">Hotels in Asokwa</a>
             </div>
           </section>
         </section>
       </section>
     </section>
-  
   </section>
 
-  <script>
-    
-  </script>
-  
+
+
+
+
+  <!-- <script>
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log(position)
+      });
+    }else{
+      console.log('no')
+    }
+  </script> -->
 
   <script>
     const hostel_swiper_box = document.querySelector('.hostel_swiper_box')
@@ -664,10 +429,108 @@
       })
     }, hsb_options) 
     hostelSwiperBoxObserver.observe(hostel_swiper_box)
-
-
   </script>
+  <script>
+    const intro_box = document.querySelector('.intro_box')
+    const intro_box_p = document.querySelectorAll('.intro_box_p')
+    const intro_box_left_box = document.querySelectorAll('.intro_box_left_box')
+    const mid_box = document.querySelector('.mid_box')
+    const mid_p = document.querySelector('.mid_p')
 
+    sessionStorage.clear()
+
+    const ibo_options = {};
+    const introBoxObserver = new IntersectionObserver((entries,observer)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          console.log('me')
+          if(!sessionStorage.getItem('animeIntroBoxP')){
+            animeIntroBoxP()
+            sessionStorage.setItem('animeIntroBoxP',1)
+          }
+        }
+      })
+    },ibo_options)
+    introBoxObserver.observe(intro_box)
+
+    const animeIntroBoxP =()=>{
+      do_span =(bi)=>{
+        sessionStorage.setItem(`span${bi}`, intro_box_p[bi].innerHTML)
+        intro_box_p[bi].innerHTML = 
+        intro_box_p[bi].innerHTML.split('').map(ibp=>{
+        if(ibp == ' '){
+          ibp = '&nbsp;'
+        }
+        return `<span class='intro_box_p_s'>${ibp}</span>`
+      }).join('')
+
+        document.querySelectorAll('.intro_box_p_s').forEach((s,si)=>{
+          anime({
+            targets: s,
+            translateX: [30,5],
+            opacity: [0,1],
+            delay : 5 * si,
+            easing: 'easeInOutQuad',
+            duration: 300,
+          });
+        })
+      }
+
+      intro_box_left_box.forEach((box,bi)=>{
+        anime({
+          targets: box,
+          translateY: [100,0],
+          opacity: [0,1],
+          delay : 300 * bi,
+          duration: 400,
+          easing: 'easeInOutQuad',
+          begin: do_span(bi),
+        })
+      })
+
+      undo_span =()=>{
+        intro_box_p[0].innerHTML = sessionStorage.getItem(`span${0}`)
+        intro_box_p[1].innerHTML = sessionStorage.getItem(`span${1}`)
+        intro_box_p[2].innerHTML = sessionStorage.getItem(`span${2}`)
+      }
+
+      setTimeout(()=>{
+        intro_box_p.forEach(intro=>{
+          intro.classList.add('change')
+        })
+        undo_span()
+      },1700)
+    }
+  
+  </script> 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    var mid_box_city_image_swiper = new Swiper(".mid_box_city_image_swiper", {
+      loop:true,
+      speed: 1500,
+      autoplay:{
+        delay:3000,
+      },
+    });
+    var mid_box_city_con_swiper = new Swiper(".mid_box_city_con_swiper", {
+      direction:'vertical',
+      loop:true,
+      speed: 1500,
+    });
+    var mid_box_city_text_swiper = new Swiper(".mid_box_city_text_swiper", {
+      direction:'horizontal',
+      loop:true,
+      speed: 1500,
+      autoplay:{
+        delay:3000,
+        reverseDirection: true,
+      },
+    });
+    mid_box_city_image_swiper.on('slideChange',()=>{
+      mid_box_city_con_swiper.slideNext()
+      mid_box_city_text_swiper.slideNext()
+    })
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

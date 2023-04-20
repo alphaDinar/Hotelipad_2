@@ -14,14 +14,17 @@
   top: 0;
   /* padding: 10px 0; */
   background: var(--info-text-color);
-  background: wheat;
+  /* background: wheat; */
   background: rgb(245, 245, 245);
+  /* background: white; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   /* background: black; */
-  --mask: 
+  /* background: white; */
+  /* --mask: 
     radial-gradient(4px at 75% 100%,#0000 98%,#000) 50% calc(100% - 4px)/16px 100% repeat-x,
     radial-gradient(4px at 25% 50%,#000 99%,#0000 101%) bottom/16px 8px repeat-x;
   -webkit-mask: var(--mask);
-          mask: var(--mask);
+          mask: var(--mask); */
 }
   /* left: 0; */
 
@@ -34,6 +37,8 @@
   /* font-weight: 600; */
   padding: 8px 10px;
   background: white;
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 5px;
 }
 #guest_num{
@@ -133,6 +138,13 @@
   padding: 1px;
   border-radius: 3px;
   color: #fdcf6d;
+}
+
+@media all and (max-width:1300px){
+  .search_bar{
+    position: revert;
+    padding: 10px 0;
+  }
 }
 
 @media all and (max-width:600px){

@@ -93,10 +93,7 @@
     flex-direction: column;
   }
   .footer_mid{
-    gap: 2rem;
     flex-wrap: wrap;
-    /* width: 100%; */
-    /* border: 1px solid white; */
   }
 }
 @media all and (max-width:800px){

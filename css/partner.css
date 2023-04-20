@@ -191,7 +191,7 @@ label > input[type='radio']:checked + .radBox{
   top: 0;
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 10;
   position: fixed;
   display: none;
@@ -206,14 +206,16 @@ label > input[type='radio']:checked + .radBox{
   align-items: center;
   padding: 15px 0;
   color: white;
-  background: #020a31;
-  gap: 1rem;
+  color: wheat;
+  background: #020513;
   width: 100%;
   --mask: 
-    linear-gradient(0deg,#0000 20px,#000 0) 0 10px,
-    radial-gradient(10px,#000 98%,#0000) 50%/18.50px 20px repeat space;
-    -webkit-mask: var(--mask);
-          mask: var(--mask);
+  radial-gradient(15px at 25% 0   ,#0000 98%,#000) 50% 15px/60px 51% repeat-x,
+  radial-gradient(15px at 75% 50% ,#000 99%,#0000 101%) top/60px 30px repeat-x,
+  radial-gradient(15px at 75% 100%,#0000 98%,#000) 50% calc(100% - 15px)/60px 51% repeat-x,
+  radial-gradient(15px at 25% 50% ,#000 99%,#0000 101%) bottom/60px 30px repeat-x;
+-webkit-mask: var(--mask);
+        mask: var(--mask);
 }
 .prop_box strong{
   font-size: 2rem;
@@ -221,14 +223,15 @@ label > input[type='radio']:checked + .radBox{
 .prop_box_con{
   width: 100%;
   display: flex;
+  padding: 2rem;
+  justify-content: center;
 }
-.prop_box_con_left{
-  width: 40%;
+.prop_box_con_left,.prop_box_con_right{
+  /* width: 40%; */
   padding: 0 5%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border: 1px solid white;
 }
 .prop_box_con_left p{
   display: flex;
@@ -242,10 +245,6 @@ label > input[type='radio']:checked + .radBox{
   display: flex;
   gap: 0.5rem;
   align-items: center;
-}
-.prop_box_con_right{
-  width: 50%;
-  border: 1px solid white;
 }
 
 @media all and (max-width:1200px){
